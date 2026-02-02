@@ -1,0 +1,89 @@
+{
+  "index.qmd": {
+    "index.html": "dbf5f461"
+  },
+  "intro.qmd": {
+    "intro.html": "70caa634"
+  },
+  "kpis/1_environmental/1_crop_livestock_fish_diversity.qmd": {
+    "1_crop_livestock_fish_diversity.html": "f58306bd"
+  },
+  "kpis/1_environmental/2_insect_mammal_tree_diversity.qmd": {
+    "2_insect_mammal_tree_diversity.html": "c67a6491"
+  },
+  "kpis/1_environmental/3_landscape_complexity.qmd": {
+    "3_landscape_complexity.html": "2ab42165"
+  },
+  "kpis/1_environmental/4_water_stress.qmd": {
+    "4_water_stress.html": "595ebf5b"
+  },
+  "kpis/1_environmental/5_energy_use.qmd": {
+    "5_energy_use.html": "8de7140b"
+  },
+  "kpis/1_environmental/6_climate_mitigation.qmd": {
+    "6_climate_mitigation.html": "0ddf713f"
+  },
+  "kpis/2_agricultural/1_crop_health.qmd": {
+    "1_crop_health.html": "99ad53d9"
+  },
+  "kpis/2_agricultural/2_animal_health.qmd": {
+    "2_animal_health.html": "4631900d"
+  },
+  "kpis/2_agricultural/3_soil_health.qmd": {
+    "3_soil_health.html": "2df9b7ee"
+  },
+  "kpis/2_agricultural/4_nutrient_use.qmd": {
+    "4_nutrient_use.html": "4f7c6d2c"
+  },
+  "kpis/3_social/1_diet_quality.qmd": {
+    "1_diet_quality.html": "70b68d61"
+  },
+  "kpis/3_social/2_land_tenure_security.qmd": {
+    "2_land_tenure_security.html": "665c12e6"
+  },
+  "kpis/3_social/3_farmer_agency.qmd": {
+    "3_farmer_agency.html": "6adfb7ff"
+  },
+  "kpis/3_social/4_human_well_being.qmd": {
+    "4_human_well_being.html": "645e9563"
+  },
+  "kpis/4_economic/1_agricultural_productivity.qmd": {
+    "1_agricultural_productivity.html": "c7a80c40"
+  },
+  "kpis/4_economic/2_labour_productivity.qmd": {
+    "2_labour_productivity.html": "4b63bd53"
+  },
+  "kpis/4_economic/3_total_income_and_income_stability.qmd": {
+    "3_total_income_and_income_stability.html": "306f9716"
+  },
+  "kpis/4_economic/4_climate_resilience.qmd": {
+    "4_climate_resilience.html": "63299c64"
+  },
+  "kpis/5_complementary/1_bat_bird_insect_diversity.qmd": {
+    "1_bat_bird_insect_diversity.html": "85953525"
+  },
+  "kpis/5_complementary/2_pollinator_diversity.qmd": {
+    "2_pollinator_diversity.html": "d41868e2"
+  },
+  "kpis/5_complementary/3_soil_health_social.qmd": {
+    "3_soil_health_social.html": "0f947f6d"
+  },
+  "kpis/5_complementary/4_nutrient_use_efficiency.qmd": {
+    "4_nutrient_use_efficiency.html": "e6cb0f9a"
+  },
+  "kpis/5_complementary/5_nutrient_balance.qmd": {
+    "5_nutrient_balance.html": "b27837fc"
+  },
+  "kpis/5_complementary/6_greenhouse_gas_emissions.qmd": {
+    "6_greenhouse_gas_emissions.html": "c807426e"
+  },
+  "kpis/5_complementary/7_enteric_methane_emission_intensity.qmd": {
+    "7_enteric_methane_emission_intensity.html": "fe1cca45"
+  },
+  "ae_indicators.qmd": {
+    "ae_indicators.html": "036205eb"
+  },
+  "references.qmd": {
+    "references.html": "7467c42e"
+  }
+}

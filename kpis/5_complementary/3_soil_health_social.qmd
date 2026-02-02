@@ -1,0 +1,60 @@
+# 5.3 Soil Health (SOCLA)
+
+## Purpose of indicator
+
+Healthy soils underpin healthy and productive agroecosystems. This indicator contributes to Sustainable Development Goal (SDG) indicator 2.4.1 which includes a sub-indicator on 'prevalence of soil degradation', and SDG indicator 15.3.1 on 'proportion of degraded land'.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Soil health |
+| Theme             | Soil health |
+| SDGs Targeted     | SDG 2.4.1, SDG 15.3.1 |
+| Data Source       | Field measurement |
+| Measurement       | Latin American Society for Agroecology (SOCLA) indicators of soil health, adapted by TAPE |
+| Measurement Units | Score from 1 to 5, representing the mean indicator value across 10 indicators |
+
+## Guidance on Measurement
+
+Soil health can be determined through field surveys with values for 10 indicators of soil health determined jointly by the farmer and enumerator. The proposed indicators were developed by the Latin American Society for Agroecology (SOCLA) and described in Nicholls et al. (2004).
+
+Data are collected by digging or picking up a small amount of soil to examine it more closely, in each of the same 10x10m square plots used to assess biodiversity. The SOCLA 10 indicators of soil health are:
+
+1. Soil structure
+2. Degree of compaction
+3. Soil depth
+4. Status of residues
+5. Colour, odour and organic matter
+6. Water retention
+7. Soil cover
+8. Signs of erosion
+9. Presence of invertebrates
+10. Microbiological activity
+
+Note, for the SOCLA analysis of soil health, you will require a wire flag (length ~50 cm, thickness ~0.08 mm) and hydrogen peroxide (volume ~100 ml). The measurement of compaction (indicator number 2) requires a wire flag which is pressed vertically into the soil, and the level of compaction is determined based on the depth at which the wire bends due to the resistance in the soil caused by compaction. Measuring microbiological activity (indicator number 10) requires hydrogen peroxide, which is poured in small quantities to assess the effervescence in soil. Little or no effervescence indicates soil with little organic matter and poor microbial activity, while high effervescence indicates rich organic matter and greater microbial activity (Nicholls et al., 2004).
+
+Each indicator is scored from 1 to 10 based on established guidelines.
+
+When the scoring of the indicators is complete, the values assigned to the indicators are added and divided by the number of measured indicators to obtain a mean value between 1-10.
+
+## Guidance on Data Entry and Reporting
+
+Record the score from 1 to 10. Be sure to take a GPS point and keep a record of the geographic coordinates where soil samples were taken to allow follow-up surveys in the same locations.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Nicholls et al. (2004)
+- FAO (2019)

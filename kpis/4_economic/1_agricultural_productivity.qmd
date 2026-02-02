@@ -1,0 +1,67 @@
+# 4.1 Agricultural productivity
+
+## Purpose of indicator
+
+Ensuring productivity and closing yield gaps is a primary goal in agricultural systems and vital for achieving global food security (SDG2), and securing livelihoods (SDG1).
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Crop and livestock productivity |
+| Theme             | Agricultural productivity |
+| SDGs Targeted     | SDG1, SDG2 |
+| Data Source       | Household survey (farmer recall) |
+| Measurement       | For crops: kg/ha (dry weight) of harvested produce; land equivalent ratio for intercropped and agroforestry systems (0 to infinity). For livestock: ## animals slaughtered for consumption/sale/gifts, kg meat/animal, litres (milk)/animal eggs/chicken, manure/animal, wool/animal, skin/animal |
+| Measurement Units | Kg/ha; kg/animal; l/animal; land equivalent area |
+
+## Guidance on Measurement
+
+**Crop productivity through farmer recall**
+
+Harvestable production per unit land area (kg/ha) for at least the three main crops, based on farmer recall for all produce harvested over the past 12 months. In the case of intercropped or agroforestry systems, collect data for all crops present in the plot and compute the land equivalent ratio (LER).
+
+**Livestock productivity**
+
+Production of animal products per unit livestock, for at least the three main livestock species (including fish), based on farmer recall of all products consumed, sold or gifted over the last 12 months.
+
+Desirable additional data:
+
+- Population growth rate: ratio between the production in number of animals and the initial population size
+- Total annual livestock production = (stock variation + offtake - Intake) / Initial size
+- Production of milk: av. production per female (/day) * number of reproductive female * milking period
+- Skin & hides (from offtake)
+- Wool: total production per year
+- Manure: total production (can be collected in declarative)
+- Productivity indicators: 1) Number of new sub-adults produced per reproductive female per year 2) Number of new adults produced per reproductive female and year
+
+**Crop productivity - detailed measurements (beyond the scope of HOLPA)**
+
+For crops see FAO (2017): https://www.fao.org/3/ca6514en/ca6514en.pdf.
+
+For livestock see FAO (2018): https://www.fao.org/3/ca6400en/ca6400en.pdf.
+
+Summary for crop yield: Yields of all crops should be measured by randomly demarcating at least three same-size plots in a field, harvesting all produce, then drying the produce and weighing it to determine its dry weight. If possible take into account harvest losses (proportion of diseased, rotten or otherwise unusable produce). Alternatively, yields can be measured based on farmer recall particularly where farmers keep good records, but note that in many cases this method is inaccurate. Alternatively, farmers can be asked to keep crop diaries and record all harvested produce over the cropping season, which produced reliable results for the LSMS but is unsuitable for illiterate farmers. See guide for further details on calculating yields in mixed cropping systems.
+
+Crop and pasture areas should be estimated by walking along the perimeter of the farmed areas with a GPS (preferred method) or using the rope-and-compass method. Areas of additional plots that are far away or difficult to access can be estimated by farmers, and verified on Google Earth imagery if possible. Asking farmers to estimate the area of their fields can work well for small parcel sizes in some contexts, but is often unreliable e.g. when farmers are not familiar with the units of measurement or if farmers have incentives to misreport crop area.
+
+## Guidance on Data Entry and Reporting
+
+_no information is available_
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Dutilly et al. (2020)
+- Alary et al. (2022)

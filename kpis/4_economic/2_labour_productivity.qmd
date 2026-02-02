@@ -1,0 +1,45 @@
+# 4.2 Labour productivity
+
+## Purpose of indicator
+
+Labour inputs required for agricultural production is one of the primary factors determining which practices are used, how profitable they are, and the social sustainability of the production system. Distinguishing which productive systems promote sustainable employment contributes to SDG 2 and SDG8.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Labour inputs per unit agricultural land area |
+| Theme             | Labour productivity |
+| SDGs Targeted     | SDG2, SDG8 |
+| Data Source       | Farmer recall during household survey |
+| Measurement       | Person hours per year, disaggregated by gender, season, and productive activity |
+| Measurement Units | Person hours per year per hectare of cultivated land |
+
+## Guidance on Measurement
+
+This indicator can be computed by collecting data on number of labour hours per year per hectare of land actively used for agricultural purposes. Labour hours should be disaggregated by:
+
+- gender
+- age
+- type of worker: hired or not hired, permanent or seasonal
+- type of activity: routine (e.g. manure collection, milking) or seasonal work (e.g. seeding, harvesting, pruning).
+
+## Guidance on Data Entry and Reporting
+
+_no information is available_
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- FAO (2010)

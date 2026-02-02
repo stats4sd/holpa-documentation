@@ -1,0 +1,48 @@
+# 5.7 Enteric Methane Emission Intensity
+
+## Purpose of indicator
+
+In Sub Saharan Africa, a large diversity of diets (forage + staple food crop residues or other agricultural byproducts) is used by ruminants herders in different production systems. It is reported that feeding strategies could help to reduce enteric methane (eCH₄) in ruminants by up to 55%. We aimed to measure *in vivo* eCH₄ emission in ruminants during each season of the year in order to test different feeding strategies and to assess their potential to mitigate eCH₄ emission.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Enteric methane emission intensity (emission per unit of product and emission per unit of fodder dry matter intake) |
+| Theme             | Climate mitigation |
+| SDGs Targeted     | Paris Agreement, NDCs |
+| Data Source       | Herders survey on feeding strategies and feeding practices, literature review, Data from ongoing projects, and field measurements |
+| Measurement       | Daily fodder intake, fodder digestibility, fodder quality, enteric methane emission (eCH₄) |
+| Measurement Units | (gDMI/LW, g/kgDMI, eCH₄/TLU/year) |
+
+## Guidance on Measurement
+
+*Direct measurement*
+
+For direct measurement of enteric methane emission at animal level, use the GreenFeed system as described in Hristov et al. (2015). In SSA, GF is actually in experiment in Burkina Faso (Ouermi et al., 2022; Gbénou et al., 2022a, 2022b).
+
+GreenFeed (GF) system is a device that can be used at pasture to measure eCH₄ of cattle individually (K. J. Hammond et al., 2016; Mombach et al., 2018; Zhao et al., 2020). It is equipped with an automatic baiting system which drop attracted pelleted feed in a tray. Animals are free in their movement and eating behavior to feed on pasture and in the GF. Emission is measured when animals visit to the system to consume bait. The system sucks air through the animal's nose and mouth into a duct with airflow measured (Huhtanen et al., 2015). Most methane is eructated at 40-120s intervals. Animals can visit the unit at any time according to timing of feed availability and distribution of eCH₄ measurements across various times of the day programing by investigators (Hristov et al., 2015). Pellet is generally dropped each 30s or 1min. Programming of eCH₄ measurements must take account of eating behavior (feeding, rumination, walk, drinking, calm) and will allows to implicate all daily activities on pasture. To be sure to not modify food intake by cattle on pasture and have best or good data, bait may contain forage that animals are grazing. Few times between 3-7 min by visit are significant to have a good measurement (Hristov et al., 2015). A significant correlation (R² = 0.92) between the eCH₄ measurements with GF and RC was revealed (Huhtanen et al., 2019). On pasture, animals don't graze at night. GF can be moved to animals parking at night do complete measure. GF can be used to describe diurnal eCH₄ emissions.
+
+## Guidance on Data Entry and Reporting
+
+Database accessible for different feeding strategies
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Hristov, A.N., Oh, J., Giallongo, F., Frederick, T., Weeks, H., Zimmerman, P.R., Harper, M.T., Hristova, R.A., Zimmerman, R.S., Branco, A.F., 2015. The Use of an Automated System (GreenFeed) to Monitor Enteric Methane and Carbon Dioxide Emissions from Ruminant Animals. JoVE 52904. <https://doi.org/10.3791/52904>
+
+- Hristov, A.N., Ott, T., Tricarico, J., Rotz, A., Waghorn, G., Adesogan, A., Dijkstra, J., Montes, F., Oh, J., Kebreab, E., Oosting, S.J., Gerber, P.J., Henderson, B., Makkar, H.P.S., Firkins, J.L., 2013. SPECIAL TOPICS — Mitigation of methane and nitrous oxide emissions from animal operations: III. A review of animal management mitigation options. Journal of Animal Science 91, 5095-5113. <https://doi.org/10.2527/jas.2013-6585>
+
+- Gbenou, G. X., Assouma, M. H., Zampaligre, N., Bois, B., Kiendrebeogo, T., Martin, C., ... & Dossa, L. H. (2022, December). Emission of enteric methane in cold dry season in sudanians peulh zebus in west africa. In 26. Rencontres autour des Recherches sur les Ruminants.

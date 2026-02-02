@@ -1,0 +1,71 @@
+project:
+  type: book
+  output-dir: docs
+
+filters:
+   - include-code-files
+
+toc: true
+number-sections: false
+book:
+  title: "DRAFT: HOLPA Key Performance and Agroecological Indicator Protocols"
+  author: "Sarah K. Jones,a,* Andrea Cecilia Sánchez,a,b,c, Chris Dickensd, Matthias S. Gecke, Chaturangi Wickramaratned, Veronique Alaryf,g, Peter Boloh, Dennis Junior Chorumai, Somphasith Douangsavanhj, Modou Gueye Fallk, Gatien Falconnierl,m,n,o, Shweta Guptap,q, Chris Kettler, Smitha Krishnans, Sylvia Nyawirah, Guillermo Orjuela-Ramirezt, Boko Michel Orounladjiu, Piedad Parejav, Telma Sibandal, Christine Lamannae,1 "
+  date: "12/5/2025"
+  status: "Draft"
+
+  sidebar:
+    style: "docked"
+    search: true
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: "1. Environmental KPIs"
+      chapters:
+        - kpis/1_environmental/1_crop_livestock_fish_diversity.qmd
+        - kpis/1_environmental/2_insect_mammal_tree_diversity.qmd
+        - kpis/1_environmental/3_landscape_complexity.qmd
+        - kpis/1_environmental/4_water_stress.qmd
+        - kpis/1_environmental/5_energy_use.qmd
+        - kpis/1_environmental/6_climate_mitigation.qmd
+    - part: "2. Agricultural KPIs"
+      chapters:
+        - kpis/2_agricultural/1_crop_health.qmd
+        - kpis/2_agricultural/2_animal_health.qmd
+        - kpis/2_agricultural/3_soil_health.qmd
+        - kpis/2_agricultural/4_nutrient_use.qmd
+    - part: "3. Social KPIs"
+      chapters:
+        - kpis/3_social/1_diet_quality.qmd
+        - kpis/3_social/2_land_tenure_security.qmd
+        - kpis/3_social/3_farmer_agency.qmd
+        - kpis/3_social/4_human_well_being.qmd
+    - part: "4. Economic KPIs"
+      chapters:
+        - kpis/4_economic/1_agricultural_productivity.qmd
+        - kpis/4_economic/2_labour_productivity.qmd
+        - kpis/4_economic/3_total_income_and_income_stability.qmd
+        - kpis/4_economic/4_climate_resilience.qmd
+    - part: "5. Complementary Indicators"
+      chapters:
+        - kpis/5_complementary/1_bat_bird_insect_diversity.qmd
+        - kpis/5_complementary/2_pollinator_diversity.qmd
+        - kpis/5_complementary/3_soil_health_social.qmd
+        - kpis/5_complementary/4_nutrient_use_efficiency.qmd
+        - kpis/5_complementary/5_nutrient_balance.qmd
+        - kpis/5_complementary/6_greenhouse_gas_emissions.qmd
+        - kpis/5_complementary/7_enteric_methane_emission_intensity.qmd
+
+
+    - ae_indicators.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  bookup-html:
+        toc: true
+        toc-depth: 3
+
+
+

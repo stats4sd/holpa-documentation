@@ -1,0 +1,72 @@
+# 5.5 Nutrient Balance
+
+## Purpose of indicator
+
+Nutrient balance is the difference between the nutrient inputs entering a farming system (mainly livestock manure and fertilisers) and the nutrient outputs leaving the system (the uptake of nutrients for crop and pasture production). A nutrient deficit indicates declining soil fertility. A nutrient surplus indicates a risk of polluting soil, water, and air. Nutrient balances are important indicators of land degradation and water pollution, relevant to SDG 6, 15, and the UNCDD.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Nutrient balance |
+| Theme             | Nutrient management |
+| SDGs Targeted     | SDG6, SDG15, UNCDD |
+| Data Source       | Field measurements, farm surveys (interviews and questionnaires), extension and agricultural officers |
+| Measurement       | Mass balance of inputs and outputs in the systems (including all sources of inputs and all sources of output in a defined system) |
+| Measurement Units | Kg of N per ha |
+
+## Guidance on Measurement
+
+The OECD system calculates nutrient loadings for nitrogen and phosphorus to agricultural soils. It is a fairly complex system based on wide range of data sources. Nutrient inputs and offtakes are estimated by applying coefficients to physical data. The physical data covers livestock numbers, crop areas, crop yields and fertiliser use. The relevant coefficients have been developed by empirical research by experts (e.g. ADAS) within a large programme of research projects.
+
+**Input indicators:**
+
+- Mineral fertiliser consumption
+- Cropping/livestock patterns (active pasture land, area of potentially fertilized land)
+- Farm management practices (seed and planting materials, crop residues, manure production and use)
+
+**Output indicators:**
+
+- Ammonia emissions
+- Emissions of methane and nitrous oxide
+- Nitrates/pesticides in water
+- Share of agriculture in nitrate contamination
+
+**Issues to be aware of:**
+
+- Estimates for offtake from pasture are based on average pasture yields and an assumed rate of grazing. Pasture represents a very significant part of the overall offtake and improvements in these estimates would greatly improve the overall accuracy of the balance sheets.
+- Estimates of fertiliser use at below national level are based on a national average application rate for each crop type. Due to regional variation in practice, estimates would be improved if regional level application rates for each crop type could be estimated.
+- The land to be used in the scope of the balance sheets must be correctly defined. If unfertilised land is included, the balance sheets will underestimate the total nutrient loadings. Reflecting this, the UK excluded land identified as "rough grazing" from the balance sheets.
+- Manure is assumed to be applied to the same parcel of land on which the livestock are grazed/reared. This assumption is robust at aggregated levels but may not be valid at finer spatial scales, particularly at a holding level.
+
+**Questions to guide data collection in surveys:**
+
+- What crops are grown on the farm and in what rotation?
+- What is the typical cropping period for each crop?
+- What type of fertilizers/inputs are used on the farm?
+- How are the fertilizers/inputs applied (e.g., broadcast, banded)?
+- How often are fertilizers/inputs applied and in what amounts?
+- What is the source of nitrogen inputs to the farm (e.g., fertilizer, organic matter)?
+- What is the amount of nutrient input per hectare and per year?
+- How is the nitrogen input managed (e.g., application rate, timing, method)?
+- What is the amount of nitrogen taken up by crops per hectare and per year - this can be determined by knowing the yield (stover/grain - t ha⁻¹)?
+
+## Guidance on Data Entry and Reporting
+
+Data recorded on input and output as kg ha⁻¹ yr⁻¹
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- OECD/Eurostat Methodology and Handbook (2014)

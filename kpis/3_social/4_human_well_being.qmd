@@ -1,0 +1,68 @@
+# 3.4 Human well-being
+
+## Purpose of indicator
+
+This indicator aligns with SDG 3 "Ensure healthy lives and promote well-being for all at all ages".
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Personal Wellbeing Index |
+| Theme             | Human well-being |
+| SDGs Targeted     | SDG 3 |
+| Data Source       | Household survey |
+| Measurement       | OECD Personal Wellbeing Index evaluation questions |
+| Measurement Units | Likert scale (0-10) |
+
+## Guidance on Measurement
+
+Human well-being encompasses quality of life and the ability of people and societies to contribute to the world with a sense of meaning and purpose. It encompasses a broad range of factors, including material well-being and emotional, physical, and social health (WHO, 2024). While people's living conditions (e.g., housing, income, employment) are important contributors to well-being, measuring living conditions (i.e. material well-being) alone fails to capture what people think and feel about their lives -- i.e., their subjective well-being.
+
+OECD's Personal Wellbeing Index is computed based on responses to the following questions (OECD, 2013, p. 20):
+
+1. Thinking about your own life and personal circumstances, how satisfied are you with your life as a whole? [0-10]
+2. How satisfied are you with your standard of living? [Standard of Living] [0-10]
+3. How satisfied are you with your health? [Personal Health] [0-10]
+4. How satisfied are you with what you are achieving in life? [Achieving in Life] [0-10]
+5. How satisfied are you with your personal relationships? [Personal Relationships] [0-10]
+6. How satisfied are you with how safe you feel? [Personal Safety] [0-10]
+7. How satisfied are you with feeling part of your community? [Community-Connectedness] [0-10]
+8. How satisfied are you with your future security? [Future Security] [0-10]
+9. How satisfied are you with the amount of time you have to do the things that you like doing? [0-10]
+10. How satisfied are you with the quality of your local environment? [0-10]
+11. For respondents who are employed only: How satisfied are you with your job? [0-10]
+
+## Guidance on Data Entry and Reporting
+
+Key issues include the need to be careful with question wording, use consistent scales, and appropriate question ordering.
+
+**1. Question wording**
+
+"Because question wording matters to how people respond to questions on subjective well-being, the translation of questions is of high importance. Potential issues arising from translation cannot be eliminated, but they can be managed through an effective translation process. A robust translation process, including back translation, is therefore essential" (OECD, 2013).
+
+**2. Scale design**
+
+"Variation in response formats can affect data quality and comparability. In the case of evaluative measures, there is empirical support for using a 0-10 point numerical scale, anchored by verbal labels which represent conceptual absolutes (such as completely satisfied/completely dissatisfied). On balance, it is preferable to label scale interval points (between the anchors) with numerical, rather than with verbal, labels" (OECD, 2013).
+
+**3. Question order**
+
+Subjective well-being questions are influenced by context and thus need to be asked in the right place so as not to be influenced by previous questions. Consider randomizing the order in which the well-being questions are asked to reduce ordering-bias.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+Note that replies can be strongly affected by individual perceptions about own status compared to neighbors' or friends', so they are expression on a relative - not absolute - condition.
+
+## Limitations
+
+An alternative to the OECD subjective wellbeing is the Generalized self-efficacy score used in Pro-WEAI (<https://weai.ifpri.info/files/2023/07/Pro-WEAI-Guide.pdf>).
+
+## References
+
+- WHO (2024)
+- OECD (2013)
+- International Well-being Group (2024)

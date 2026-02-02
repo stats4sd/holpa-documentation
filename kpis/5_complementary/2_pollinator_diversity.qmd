@@ -1,0 +1,63 @@
+# 5.2 Pollinator Diversity
+
+## Purpose of indicator
+
+Relevant for the post-2020 Global Biodiversity Framework Goal B on conserving services provided by ecosystems (CBD/COP/15/L.26). Pollinator declines are threatening agricultural production in multiple regions (Millard et al., 2021; Soroye et al., 2020), while pollinator deficits are directly linked to poor human diets and nutrition-related diseases (Smith et al., 2022, 2015). Most fruit and vegetable crops are pollinator-dependent and fruits and vegetables are a vital source of vitamins for people (Chaplin-Kramer et al., 2014).
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Insect pollinator diversity |
+| Theme             | Biodiversity |
+| SDGs Targeted     | Post-2020 Global Biodiversity Framework Goal B |
+| Data Source       | Direct measurement in field |
+| Measurement       | Sweep netting, pan traps and/or targeted field observations in quadrats |
+| Measurement Units | Count with species of pollinator (clearly differentiating between visitor and pollinator) per unit time of observation within a defined area (plot), transect length and number of stops (with standardised number of sweeps/time period), number of visits to the flowers by the pollinator. For pan traps, collections separated by colour of bowls placed for fixed durations (start and end time to be noted and to be consistent about the time and duration). |
+
+## Guidance on Measurement
+
+For a general insect pollinator diversity and abundance study, sweep netting along a transect (a fixed or variable corridor of flowering plants walked for a set distance and/or time, and pollinators either identified through visual observations, caught for laboratory identification, or a mixture of both approaches) or pan traps (a triplet of plastic bowls of about 350 ml capacity; sprayed with UV fluorescent paint with 1 white, 1 yellow, 1 blue; with each bowl containing 100 ml of water plus a drop of unscented detergent to break surface tension and placed at ground-level, or mounted at surrounding crop flower height, in order to trap bees for subsequent laboratory identifications) along transects can be used to collect pollinator data in non-cropped areas, while targeted field observations on small quadrats / plots (a fixed plot of flowers observed for a fixed amount of time where the visitors can either be identified visually and/or caught for laboratory identification) and/or pan traps can be used to collect pollinator data on cropped land.
+
+Sweep netting is effective for catching a wide range of pollinators. Sweep netting requires killing insects, but to reduce mortalities, experienced enumerators could release common pollinators. However inexperienced enumerators will need to retain all insects so these can be correctly identified.
+
+On fields where farmers do not want us to sweep net, pan traps can be used instead. Pan traps are effective for monitoring flying insects as long as there is water access on field and the pans don't get stolen or damaged (elephants and other wildlife can be a problem). Samples need to be harvested on a timely basis, because they rapidly deteriorate. Pan traps require minor funding for installation.
+
+Targeted observations on small quadrats / plots involves using a frame of a defined size (size large enough to be able to observe by 1 observer based on the pollinator activity and observability of the researcher, Ex: 50*50 cm plot), number of floral units within the plot, or fixed number of branches or flowers depending on the type of plants being observed. The investment is minimal but requires some amount of training.
+
+Ideally pollinators should be identified to genus or species level with the assistance of trained experts. Local universities could be contacted to identify such experts.
+
+Pan traps are better for solitary bees and hoverflies, while transects or plots are better for social bees and other insects. The methods will have to be adapted based of the crop type or pollinators of interest.
+
+The floral resources available per unit area can also be recorded.
+
+*Note on other methods*
+
+Sticky traps are an easy and often cheap option, but are less suitable to monitoring a diverse set of flower visitors.
+
+## Guidance on Data Entry and Reporting
+
+The data will have to be recorded based on the method employed. Record crop type/type of habitat being observed, field and plot number, replication, time of observation for all methods. Additionally, for:
+
+1. Transect: Length of the transect, number stops, time spent per stop and number of sweeps need to be consistent. Record species collected/observed, stored species to be labelled for further identification.
+
+2. Pan traps: Number of traps, colour combination, distance between two trap stations, replications (or transect length) - need to be consistent. Segregate species collected based on trap colours and trap station and transect number. Record the species and number of individuals while sorting at the lab.
+
+3. Targeted observations on plots: Plot size, replications (within plot and within field), extent of time observed needs to be consistent. Number of visits (a visit is counted only if the insect makes contact with the floral reproductive organ) and species visiting the target species per plot/branch/flower.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- O'Connor et al. (2019)
+- Hicks et al. (2016)

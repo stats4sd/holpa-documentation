@@ -1,0 +1,51 @@
+# 1.5 Sustainable energy use
+
+## Purpose of indicator
+
+Fossil fuels and other non-renewable energy sources contribute to global greenhouse gas emissions, exacerbating global warming. Increasing the share of renewable energy sources while reducing overall energy consumption contributes to net zero emissions targets (Paris Agreement, SDG 13), while self- and locally produced energy helps ensure an affordable and reliable energy supply (SDG 7).
+
+## Key Metadata
+
+| Metadata Item     | Description                                                                                                                                                                                                                                |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Indicator Name    | Sustainable energy use                                                                                                                                                                                                                     |
+| Theme             | Energy use                                                                                                                                                                                                                                 |
+| SDGs Targeted     | SDG 7, SDG 13                                                                                                                                                                                                                              |
+| Data Source       | Household survey                                                                                                                                                                                                                           |
+| Measurement       | Proportion of energy sources that are from renewable sources (energy produced from solar panels, wind turbines, hydropower or other renewable sources). <br/>Proportion of consumed energy that is produced on-farm or by local suppliers. |
+| Measurement Units | Likert scale (1-3), where 1 represents only renewable energy use, 2 a mixture of renewable and non-renewable energy use, 3 only non-renewable energy use.                                                                                  |
+
+## Guidance on Measurement
+
+This indicator can be calculated by collecting data on:
+
+- Sources of energy, disaggregated by renewable and non-renewable, per activity (cooking, irrigation, tillage, and other food-related/agricultural activities). Used to provide a Likert scale measure of clean energy use:
+    - 1: Totally renewable
+    - 2: Partially renewable
+    - 3: Not renewable.
+
+- Proportion of energy used that is produced on-farm, by the community, or purchased from other sources
+
+Data on the proportion of renewable and locally produced energy sources can be combined to provide a Likert-scale measure of the sustainability of energy use.
+
+## Guidacne on Data Entry and Reporting
+
+Record the energy sources in the system assessed.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+Some renewable energy have negative environmental impacts, e.g. biogas digestors contribute to GHG emissions when they leak.
+
+## References
+
+- Sustainability Directory, 2025
+
+

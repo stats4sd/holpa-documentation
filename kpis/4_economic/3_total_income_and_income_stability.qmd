@@ -1,0 +1,91 @@
+# 4.3 Total Income and Income Stability
+
+## Purpose of indicator
+
+Total income and income stability are indicators of household living standards. Ensuring that agricultural livelihoods provide adequate and stable or increasing incomes contributes to rural development and ending poverty (SDG1).
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Total income; Income stability |
+| Theme             | Income |
+| SDGs Targeted     | SDG1 |
+| Data Source       | Household survey |
+| Measurement       | Ratio of household income to national average household income; Likert score |
+| Measurement Units | Ratio (unitless); Likert score 1-3 or 1-5 |
+
+## Guidance on Measurement
+
+We discuss three measurement approaches used in HOLPA: i) calculating total household income (or asset based proxies for this), ii) qualitative measure of income stability, iii) qualitative measure of income-expenditure ratio.
+
+**Income level (KPI1)**
+
+Total income per household is the total amount of profit or net earning a household makes over a given period. Ideally, income should be computed from data collected on all types of income generating activities agricultural or non-agricultural activities, goods and service based) and all types of household expenses, over the last 12 months. In practice, these data can be challenging to accurately collect in systems without digital records because they rely on farmer recall of all incoming and outcoming funds. Data on income should be compared to the national mean income level and used to calculate the ratio of household to mean national income.
+
+In addition, collecting data on income sources can be used to assess the level of dependency on single income sources or the capacity to withstand a shock through income diversification (Markowitz, 1952).
+
+**Income based on assets (alternative KPI1)**
+
+The asset-based approaches can be a good alternative when income and consumption data are not available or too expensive to collect. Various authors have worked on assets as a measure or proxy of welfare (Barrett and Carter, 2005; Carter and Barrett, 2006; Falkingham and Namazie, 2002). For example, the poverty probability Index (PPI, <https://www.povertyindex.org/>) is an asset-based approach. It offers a country specific scorecard to estimate the likelihood from a 10-question questionnaire based on 6 domains: durable household assets (e.g., TV, transport means), housing quality (used materials), utilities and infrastructure access (water and electricity access), land and property, livestock asset, and education.
+
+**Income stability (qualitative) (KPI2)**
+
+Respondents are asked 'How would you rate the stability of household income?':
+
+5 - Income is increasing over time.
+
+4 - Income is stable over time.
+
+3 - Income varies little from year to year.
+
+2 - Income varies from year to year.
+
+1 - Income is on a decreasing trend.
+
+This information provides a rapid indication of income trends.
+
+**Income-expenditure balance (complementary indicator, not a KPI)**
+
+HOLPA collects data on whether expenditures are less than, equal to, or more than income received by the household, over the last 12 months. The responses can be used to give a simple measure of whether the household has sufficient income to meet its needs.
+
+Data are collected by asking: In the last 12 months, did the household spend more money on the farm than it earns from the farm?
+
+- Yes
+- No
+- I don't know
+
+## Guidance on Data Entry and Reporting
+
+For KP1 (total income), discuss income in terms of the local currency during the survey and consistently ask for information from a single time-period. When possible, ask questions on every distinct source of income (e.g. per crop, per buyer) and aggregate these later, to avoid inaccurate estimates or missed income sources (IDH, 2021). For example, if a crop was grown during multiple seasons within one year, it is preferable to ask the question for each season and then evaluate over the year. For livestock activities, distinguish regular income (e.g., milk, eggs per week) and more occasional income from the sale of animals.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+Income level depends on occupational activity, but this is not the only determining factor. Income level also reflects consumption, savings, accumulation, and lifestyle behaviors.
+
+## Limitations
+
+Total income assessment faces at least three main difficulties:
+
+1. The attitude of the head of household and her/his family, who are susceptible to: (i) underestimate their net income to avoid taxes, benefit from potential survey-related assistance, avoid social pressures from neighbors, or (ii) overestimate it to display their social success or assert their social position (Angel and Bittschi, 2019; Carletto, 2021). Income being highly confidential and sensitive information, it is best collected by adding up income derived from asking detailed information on household activities and using probing questions to ensure all sources are. It may be better to use proxies (based on assets on expenditures, such as alternative KPI1) than rely on potentially inaccurate income data.
+
+2. The complexity of income in rural areas, with significant seasonal variability in both earnings and production costs, means that respondents may rely on either recent transactions or their primary activity, neglecting all sources of income derived from other activity.
+
+3. The revenues can be earned and manage by the different members of the household who share the same roof or the same meal (household unit). In this case, it is important to make a link between the various activities carried out by all household members.
+
+Alternative income indicators to consider in future surveys include monitoring expenditures, since income in rural areas is often composed of market and non-market sales, and self-consumption.
+
+## References
+
+- IDH (2021)
+- Angel et al. (2019)
+- Carletto (2021)
+- Carter and Barrett (2006)
+- Falkingham and Namazie (2002)
+- Carletto et al. (2022)
+- Parvathi and Nguyen (2018)
+- Markowitz (1952)

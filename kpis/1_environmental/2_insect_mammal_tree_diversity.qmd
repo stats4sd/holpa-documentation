@@ -1,0 +1,52 @@
+# 1.2 Insect, mammal and tree diversity
+
+## Purpose of indicator
+
+Relevant for global climate mitigation targets (the Paris Agreement) and the post-2020 Global Biodiversity Framework Target 10 on 'Proportion of agricultural area under productive and sustainable agriculture'. Biodiversity indicators selected to be easy to use and scalable, in line with Essential Biodiversity Variables 2020 initiative recommendations.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                                                                                                                                                        |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Indicator Name    | Insect, mammal and tree diversity                                                                                                                                                                  |
+| Theme             | Biodiversity                                                                                                                                                                                       |
+| SDGs Targeted     |                                                                                                                                                                                                    |
+| Data Source       | Household survey, field survey                                                                                                                                                                     |
+| Measurement       | Diversity of insect, mammal and tree species per hectare of farmland, measured using data on richness, abundance, and density, and standardised to a scale of 0 to 100 to enable data aggregation. |
+| Measurement Units | Count with associated production area recorded in hectares, disaggregated by insect/mammal/tree species, tree maturity, and local/exotic origin.                                                   |
+
+## Guidance on Measurement
+
+This indicator can be calculated by collecting data on the:
+
+- Richness and abundance of mammals, insects and trees
+
+These data can be collected as part of household and field surveys.
+
+To enable more indepth tree data analysis, e.g. to support efforts to monitor native species, ancient specimens, and carbon sequestration on-farm, additional data can be collected on:
+
+- Proportion of native tree species
+- Proportion of mature trees (>50cm diameter at breast height, or height >10m)
+
+## Guidance on Data Entry and Reporting
+
+Species names (if available) should be stored in the local language and also using their scientific and English names to enable comparisons across sites.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Landmann et al., 2023
+- Navarro et al., 2017
+
+

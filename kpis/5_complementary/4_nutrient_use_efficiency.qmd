@@ -1,0 +1,72 @@
+# 5.4 Nutrient Use Efficiency
+
+## Purpose of indicator
+
+Nutrient use efficiency (NUE) is important indicator in nutrient management as it provides information on the efficiency of inputs use, which has important implications for crop productivity, economic viability, and environmental sustainability. By monitoring NUE, farmers and agronomists can determine if the current inputs are meeting the nutrient needs of the crop and if adjustments are needed to optimize inputs use and reduce nutrient losses to the environment. This indicator is also related to a number of Sustainable Development Goals (SDG) e.g SDG 2 on zero hunger and SDG 15 life on land.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Nutrient use efficiency |
+| Theme             | Nutrient management |
+| SDGs Targeted     | SDG2, SDG15 |
+| Data Source       | Field measurements, farm surveys (interviews and questionnaires), extension and agricultural officers |
+| Measurement       | Nutrient use efficiency (uptake and losses) in the production system |
+| Measurement Units | Harvested produce (kg) per unit N input (kg) per year, disaggregated by organic or chemical inputs. Can be presented as a ratio or as a percentage (%) of output removal over inputs. |
+
+## Guidance on Measurement
+
+Nutrient use efficiency as an indicator can be determined at the three levels i.e. plot level (the level of individual crops), farm level (the level of a whole farm and its cropping system), and landscape level (a larger area e.g. region or watershed).
+
+Data can be collected on growth parameters considering key stages of crop cycle as different stages have varied needs of nutrients uptake and utilization. Growth rate, change in biomass (root and above ground biomass). Nutrient uptake can be estimated by multiplying the N concentration of the plant by its biomass.
+
+i. Nutrient input - amount of nutrient (such as nitrogen (N), phosphorus (P), or potassium (K)) that is added to the farm system, either through fertilization or other means.
+
+ii. Nutrient uptake - amount of nutrient that is taken up by the crops and other plants growing in the farm system.
+
+iii. Boundary definition: extent of the system being studied, and includes the inputs and outputs that are considered in the NUE calculation.
+
+iv. Crop yield: total biomass produced by the crops in the farm system. Crop yield can be used to estimate nutrient uptake, as nutrient uptake is proportional to crop yield.
+
+Plant tissue analysis: analysis of plant tissue samples, such as leaves or stems, to determine the nutrient concentration and biomass of the plants growing in the farm system.
+
+At plot level it is important that regular measurements of the plant growth and nutrient uptake are done using standardized methods. e.g. Kjeldahl digestion for N content or the calorimetric methods.
+
+At farm level, a standardized data collection and analysis method across multiple plots is required. With accurate recordings of crop rotations, soil management and nutrient inputs.
+
+Farm definitions and specialization of system being studied e.g arable farms, horticultural farms, mixed crop-livestock. The spatial and temporal limits may include study the whole farm or during a growing season or over number years. Most recommended should be in yearly basis (kg ha⁻¹ yr⁻¹).
+
+NUE at landscape level will include a standardized method of data collection and analysis from multiple farms, proper delineation of boundaries of different farm practices (e.g arable, horticultural, mixed crop-livestock) including environmental and socio-economic factors to account for farm heterogeneity.
+
+The method to determine NUE at all scales is NUE = N output / N input.
+
+At all scales, it is good to consider all possible sources of inputs into the system to avoid under or overestimation of the NUE.
+
+Specific survey questions should address the following:
+
+- What is the amount of nutrient input, such as nitrogen (N), phosphorus (P), or potassium (K), added to the farm system through fertilization or other means? In kg ha⁻¹
+- How many crop cycles or seasons do you have in a year and different crops in specific plots considering rotations
+- Yield obtained in the farm (t ha⁻¹) edible portion + stover yield categorized for each product grown in the farm/plot
+- For farm surveys we need specific concentration/content of nutrients in the harvested products - secondary co-efficient can be obtained from literature or specific analysis can be done on sampled products.
+
+## Guidance on Data Entry and Reporting
+
+Uniform data entry and all conversion of inputs and output to be reported in kg ha⁻¹ yr⁻¹. Define the unit of measurement (e.g. kg N uptake per kg N applied, % N, etc) and make sure all data is reported consistently using the same unit.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Dobermann (2007)
+- European Union Nitrogen Use Efficiency (NUE) (2016) (EU Nitrogen Expert Panel, 2016)

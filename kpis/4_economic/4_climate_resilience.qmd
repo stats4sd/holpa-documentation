@@ -1,0 +1,75 @@
+# 4.4 Climate resilience
+
+## Purpose of indicator
+
+Climate change is affecting food systems around the world, with temperatures and precipitation anomalies and extreme events leading to crop/livestock losses, altering species ranges, creating agricultural water stress, altering working conditions and triggering human migration. Building farm and food system resilience to climate change and other major stressors (e.g. pandemics, war) is fundamental to prevent food and livelihood insecurity (SDG 1, 2), and avoidable loss of life (SDG 3, 15).
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Resilience score |
+| Theme             | Climate resilience |
+| SDGs Targeted     | SDG1, SDG2, SDG3, SDG15 |
+| Data Source       | Household survey |
+| Measurement       | Resilience score adapted from RIMA |
+| Measurement Units | Score 0-20 |
+
+## Guidance on Measurement
+
+Resilience is the capacity of socioeconomic systems (e.g., households) to withstand shocks through adaptation and transformation.
+
+FAO's Resilience Index Measurement and Analysis (RIMA) is one way to measure resilience. FAO computes a Resilience Capacity Index (RCI) based on data collected across four pillars:
+
+1. Access to basic services (ABS)
+2. Assets (AST)
+3. Social safety nets (SSN)
+4. Adaptive capacity (AC)
+
+FAO calculates the RCI using structural equation modelling (SEM), combining Confirmatory Factor Analysis and Path Analysis. There are two steps: 1) estimate resilience of each pillar through Factor Analysis (FA), 2) calculate a resilience index from the pillars, using Ordinary Least Squares with the outcome variable being a food security indicator(s) such as dietary diversity score. The benefit of this approach is that is possible to quantify the contribution of each pillar to the overall resilience. The limitation is that the RCI depends heavily on which indicator is used as the outcome variable which does not capture the variation across the four pillars.
+
+For HOLPA, we adapt the FAO approach to directly combine the data from the four pillars into a measure of resilience scaled from 0-20. This can be done by assigning scores of 0-5 to all responses, then taking the mean within each pillar, and summing scores across the four pillars according to the following table:
+
+| **Pillar** | **Question** | **Score assigned to response** |
+|------------|--------------|--------------------------------|
+| ABS | Does your farm/household have the following services: 1) Drinking water piped to the household, 2) Toilet with piped sewer or septic tank, 3) Electrical energy, 4) Waste (rubbish) collection service, 5) Mobile phone reception, 6) Internet. [Count services] | 5: 3 or more; 2.5: 1-2; 0: None |
+| ABS | How far (one way) is the household from the closest accessible and functioning service in minutes (walking): 1) Freshwater source, 2) primary school, 3) public hospital or health facility, 4) livestock market 5) agricultural/crops market, 6) public means of transport, 7) well-maintained road suitable for cars. | For each service: 5: <5 mins; 2.5: 5-20 mins; 0: > 20 mins |
+| AST | How many of the following assets do household members own: 1) Car, 2) Motorbike, 3) Bicycle, 4) Gas or electric cooker, 5) Mobile phone, 6) Ox-plough, 7) Tractor, 8) Machete. [Count assets] | 5: 5 or more distinct asset types; 2.5: 2-4; 0: 0-1 |
+| SSN | On average, how many school meals have the children living in the household received per week, during the last month of attending school? | 5: 5 meals; 4: 4 meals; 3: 3 meals; 2: 2 meals; 1: 1 meal; 0: 0 meals |
+| SSN | Would any of the following individuals or organisations provide your household support in case of need: 1) local farmer associations or cooperatives, 2) other local associations (e.g. women support groups, youth groups), 3) individuals from my community, 4) individuals from a different community, 5) community leaders, 6) NGOs 8) local government, 9) national government, 10) other (please specify). [Count sources] | 5: 3 or more; 2.5: 1-2; 0: None |
+| AC | Can the head of household read and write in any language? | 5: Can read and write; 2.5: Can read or write; 0: Cannot read or write, or prefer not to say |
+| AC | On average, how many years have the household members of working age (>14 and <65 years old) attended formal school? | 5: ≥7 (Secondary or higher); 2.5: <7 (Primary only); 0: 0 (None) |
+| AC | Has any household member received training in the last 12 months? | 5: Y; 0: N |
+| AC | In the past 12 months, what were all the household's sources of income: 1) Agriculture, animal breeding, fishing, 2) Other family business, 3) Government salary, 4) private sector salary, 5) Cash transfers (e.g. transfers from absent family members, donations), 6) Other (please specify) [count sources] | 5: 3 or more sources; 2.5: 2 sources; 0: 1 source |
+| AC | In the past 7 days, what percentage of the household's income was used for buying food | 5: 0-25%; 3.33: 26-50%; 1.66: 51-75%; 0: 76-100% |
+| AC | In the past 5 years, has your farm/household had access to credit to support investment in your farming business. | 5: Y; 0: N, or I don't know |
+| AC | How do you feel about your farm/household's ability to meet credit repayments now and until the loans are fully repaid? | 5: Full repayments; 3.33: Uncertain future repayments; 1.66: Uncertain current repayments; 0: Uncertain current and future repayments |
+| AC | Do you have access to crop insurance? If yes, what is covered, e.g. losses from weather events, pest outbreaks market shocks? | 5: Y; 0: N |
+| AC | Do you have access to subsidies for agricultural inputs? If yes, which inputs | 5: Y; 0: N |
+
+Additionally, HOLPA collects data on household exposure to shocks over the last 12 months and any coping mechanisms employed.
+
+## Guidance on Data Entry and Reporting
+
+_no information is available_
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+The RIMA methodology has been criticized for failing to reliably predict future household resilience in terms of food security (Upton et al. 2022). In a review of resilience indices presented in Upton et al. (2022), the best-performing food security resilience indicator, which was the one developed by Cissé and Barrett (2018), achieved only modest overall accuracy in classifying food-insecure households in their application, whereas other approaches (RIMA and TANGO) **performed no better than random chance**. Furthermore, none of the resilience measures predicted significantly better than the far simpler approach of using the **most recent observed value of wellbeing to predict future wellbeing.** Therefore, Upton et al. (2022) argue, the value added in terms of predictive and targeting performance by these measures remains unclear. Overall, Upton et al. (2022) conclude that "the approaches presently in play are all, at best, imperfect, and at worst deeply flawed."
+
+Currently, there is a shortage of alternative resilience indicators suitable for inclusion in a holistic survey (that is, robust yet not requiring time-consuming data collection). The World Bank is working on a Causal machine Learning Approach to Resilience Estimation (CLARE), which is rooted in an impact evaluation framework and causal machine learning algorithms applied to longitudinal household survey data. The indicator is model-agnostic, data-driven, scalable, and normatively anchored to wellbeing thresholds, and can be either shock-specific or a general-purpose resilience metric. CLARE is calculated using data on food consumption, food insecurity, drought, shocks, gender, household size and demographic structure, assets and access to services. However, the reliance on repeat survey data may present a constraint to use in projects with short timespans or limited resources.
+
+## References
+
+- FAO (2016) - RIMA
+- Upton et al. (2022)
+- Alloush and Carter (2024)
+- Cerqua et al. (2024) - CLARE

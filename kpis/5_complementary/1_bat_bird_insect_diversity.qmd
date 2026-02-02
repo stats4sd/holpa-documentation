@@ -1,0 +1,45 @@
+# 5.1 Bat, Bird, and Insect Diversity
+
+## Purpose of indicator
+
+Relevant for the post-2020 Global Biodiversity Framework Target 10 on 'Proportion of agricultural area under productive and sustainable agriculture'. In addition to evaluation of on farm crop and Livestock diversity, this metric will summarise species level diversity of trees, birds and insects within the farm landscape used by farmers. It will combine field transects and use state of the art acoustic monitoring and school-based citizen science monitoring to evaluate, bird, insect and bat diversity across the ALLs.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| Indicator Name    | Bat, bird and insect diversity |
+| Theme             | Biodiversity |
+| SDGs Targeted     | Post-2020 Global Biodiversity Framework Target 10 |
+| Data Source       | Field survey, field based Passive Acoustic Monitoring (PAM), and citizen science |
+| Measurement       | Bird species diversity and guilds, insect diversity, based on acoustic profiles, and bat diversity, based on automatic monitoring. |
+| Measurement Units | Bird, Bat and Insect diversity, species number. |
+
+## Guidance on Measurement
+
+This indicator can be calculated by collecting data on the:
+
+- Total number of bird species, and their guilds (forest species, generalist, rarity).
+- Total number of detected insect species or complexity of insect acoustic profile.
+
+These data can be collected as part of a field survey, and using base stations set up in each ALL. To verify the data, and help to obtain area estimates, users can work with the SoundLab University of Wisconsin or other established analysts.
+
+## Guidance on Data Entry and Reporting
+
+Be sure to use the same area units and monitoring acoustic stations for all sites and species, so that diversity indices can be calculated. Bird, bat and insect species names should be stored in the local language and also using their scientific and English names to enable comparisons across sites.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+_no information is available_
+
+## Limitations
+
+_no information is available_
+
+## References
+
+- Ross, S.R.J., O'Connell, D.P., Deichmann, J.L., Desjonquères, C., Gasc, A., Phillips, J.N., Sethi, S.S., Wood, C.M. and Burivalova, Z., Passive Acoustic Monitoring provides a fresh perspective on fundamental ecological questions. Functional Ecology. (Ross et al., 2023)

@@ -1,0 +1,47 @@
+# 1.1 Crop, livestock and fish diversity
+
+## Purpose of indicator
+
+Relevant for the post-2020 Global Biodiversity Framework Target 10 on 'Proportion of agricultural area under productive and sustainable agriculture', where the Agrobiodiversity Index is a complementary indicator (CBD/COP/15/L.26). The Agrobiodiversity Index includes various measures of agrobiodiversity, including crop and livestock diversity.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                                                                                                                            |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Indicator Name    | Crop, livestock and fish diversity                                                                                                                                     |
+| Theme             | Agrobiodiversity                                                                                                                                                       |
+| SDGs Targeted     |                                                                                                                                                                        |
+| Data Source       | Household survey                                                                                                                                                       |
+| Measurement       | Gap in diversity of crop varieties (or species) and fish and livestock breeds (or species) on the farm, measured using data on richness relative to the local maximum. |
+| Measurement Units | Count with associated production area recorded in hectares, disaggregated by crop and animal species and ideally also variety/breed                                    |
+
+## Guidance on Measurement
+
+This indicator can be calculated by collecting data on the:
+
+-   Count of crop varieties and species, and the relative area occupied.
+-   Count of livestock breeds and species.
+-   Count of fish breeds and species.
+
+These data can be collected as part of a household survey. To verify the data, and if time allows, the researcher and farmer could conduct a transect of the farm and discuss and record where different crops are planted.
+
+## Guidance on Data Entry and Reporting
+
+Be sure to use the same area units for all species/varieties/breeds, so that diversity indices can be calculated. Crop and livestock varieties/breeds and species names should be stored in the local language and also using their scientific and English names to enable comparisons across sites. A local agronomist may need to help identify the scientific and English names.
+
+## Calculation Method
+
+*no information is available*
+
+## Indicator Interpretation and Threshold Setting
+
+*no information is available*
+
+## Limitations
+
+*no information is available*
+
+## References
+
+-   FAO, 2019
+-   Jones et al., 2021

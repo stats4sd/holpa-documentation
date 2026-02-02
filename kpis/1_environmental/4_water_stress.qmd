@@ -1,0 +1,66 @@
+# 1.4 Water stress
+
+## Purpose of indicator
+
+Aligns to SDG 6.4.2 on level of water stress, and SDG 6.6.1 on extent of water-related ecosystems.
+
+## Key Metadata
+
+| Metadata Item     | Description                                                                                           |
+|-------------------|-------------------------------------------------------------------------------------------------------|
+| Indicator Name    | Water stress                                                                                          |
+| Theme             | Water                                                                                                 |
+| SDGs Targeted     | SDG 6.4.2, SDG 6.6.1                                                                                  |
+| Data Source       | Household survey                                                                                      |
+| Measurement       | Proportion of months with agricultural water shortages per year, for all agriculturally active months |
+| Measurement Units | %                                                                                                     |
+
+## Guidance on Measurement
+
+This indicator can be calculated by collecting data on the:
+
+- Number of months for which a household experienced water shortages in the last 12 months, in relation to crop, livestock, fish or other agricultural activities (ideally disaggregated).
+
+The indicator is calculated by summing the number of months of water stress and dividing this by 12, and then taking the inverse (1/x) so that higher values indicate less water stress.
+
+Additional data can be collected on water sources (disaggregated by rainwater, water storage on-farm, water storage off-farm, flood water, piped water, other) to distinguish rainfed water stress versus irrigated water stress, and whether water harvesting measures are used.
+
+These data can be collected as part of a household survey.
+
+## Guidance on Data Entry and Reporting
+
+Collect data by asking which months (Jan, Feb, Mar, etc) water is needed per activity, and then which months there are water shortages per activity, to ensure alignment between the two responses.
+
+## Calculation Method
+
+_no information is available_
+
+## Indicator Interpretation and Threshold Setting
+
+This indicator presents the percentage of months in a year with water stress. Lower values indicate less stress, while high values indicate more stress. Therefore the indicator values should be inversed.
+
+## Limitations
+
+Key limitations of the measurement approach for this indicator include:
+
+- Water quality is not accounted for.
+- Water storage and delivery infrastructure are not considered.
+
+Alternatives to consider for future surveys include the ''Agricultural Water Scarcity Index'' which is a dimensionless index; or ''Water Productivity'' (kg produced/m³ water consumed); or Quantify freshwater (rainfall, groundwater and surface water) supplied to different agricultural enterprises on the farm during the month or year. For the latter, users should:
+
+- Estimate amount of water (m³/year) required by crop, livestock, fish or other agricultural enterprises (disaggregated) on the farm.
+- Estimate the amount of water (m³/year) supplied to each agricultural enterprise on the farm.
+- Calculate: Water Stress (%) = (Total freshwater supplied / Available freshwater resources) × 100.
+- Classify water stress (%) into the following categories:
+    - No stress = <10. Low water demand relative to water supply.
+    - Low stress = 10-20. Moderate demand – sustainable status.
+    - Medium stress = 20-40. Significant pressure on water resources.
+    - High stress = 40-80. Strong competition for water – management is critical.
+    - Critical stress = >80. Unsustainable water extraction for agriculture.
+
+## References
+
+- Biancalani and Marinelli, 2021
+- van Vliet et al., 2021
+
+
