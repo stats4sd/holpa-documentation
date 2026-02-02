@@ -1,0 +1,3 @@
+[submodule "holpa-r-scripts"]
+	path = holpa-r-scripts
+	url = https://github.com/stats4sd/holpa-r-scripts.git
