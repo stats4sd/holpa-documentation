@@ -34,7 +34,15 @@ Record the energy sources in the system assessed.
 
 ## Calculation Method
 
-_no information is available_
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="1.5.energy_use"
+        code-line-numbers="true"
+    }
+```
+-->
+
 
 ## Indicator Interpretation and Threshold Setting
 

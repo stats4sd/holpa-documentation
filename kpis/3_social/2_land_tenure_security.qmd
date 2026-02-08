@@ -43,7 +43,12 @@ Check that the total land area accessed by the household matches the sum of the 
 
 ## Calculation Method
 
-_no information is available_
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="3.2.land_tenure"
+        code-line-numbers="true"
+    }
+```
 
 ## Indicator Interpretation and Threshold Setting
 

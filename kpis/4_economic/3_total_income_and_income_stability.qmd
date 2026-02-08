@@ -61,7 +61,44 @@ For KP1 (total income), discuss income in terms of the local currency during the
 
 ## Calculation Method
 
-_no information is available_
+
+### Income Ratio:
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.3.a.income_ratio"
+        code-line-numbers="true"
+    }
+```
+
+### Income Stability
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.3.b.income_stability"
+        code-line-numbers="true"
+    }
+```
+
+### Income vs Expenditures
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.3.c.income_v_expenditures"
+        code-line-numbers="true"
+    }
+```
+
+
+### Income Sufficiency
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.3.c.income_v_expenditures"
+        code-line-numbers="true"
+    }
+```
+
+
 
 ## Indicator Interpretation and Threshold Setting
 

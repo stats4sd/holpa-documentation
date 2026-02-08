@@ -44,7 +44,15 @@ Record the score from 1 to 10. Be sure to take a GPS point and keep a record of 
 
 ## Calculation Method
 
-_no information is available_
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
+
 
 ## Indicator Interpretation and Threshold Setting
 

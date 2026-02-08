@@ -59,8 +59,14 @@ This indicator collects sensitive data on human subjects. Researchers should obt
 
 ## Calculation Method
 
-_no information is available_
-
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="3.3.farmer_agency"
+        code-line-numbers="true"
+    }
+```
+-->
 ## Indicator Interpretation and Threshold Setting
 
 _no information is available_

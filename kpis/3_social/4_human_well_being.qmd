@@ -51,7 +51,13 @@ Subjective well-being questions are influenced by context and thus need to be as
 
 ## Calculation Method
 
-_no information is available_
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="3.4.human_well_being"
+        code-line-numbers="true"
+    }
+```
+
 
 ## Indicator Interpretation and Threshold Setting
 

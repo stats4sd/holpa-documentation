@@ -55,7 +55,55 @@ _no information is available_
 
 ## Calculation Method
 
-_no information is available_
+
+### 1. Access to basic services (ABS)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.4.1.climate_resilience_abs"
+        code-line-numbers="true"
+    }
+```
+
+### 2. Assets (AST)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.4.2.climate_resilience_assets"
+        code-line-numbers="true"
+    }
+```
+
+### 3. Social safety nets (SSN)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.4.3.climate_resilience_ssn"
+        code-line-numbers="true"
+    }
+```
+
+### 4. Adaptive capacity (AC)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.4.4.climate_resilience_adaptive"
+        code-line-numbers="true"
+    }
+```
+
+
+### Overall RIMA Calculation
+
+Requires calculating the 4 sub-indicators above
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="4.4.climate_resilience_rima"
+        code-line-numbers="true"
+    }
+```
+
 
 ## Indicator Interpretation and Threshold Setting
 

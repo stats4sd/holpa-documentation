@@ -33,7 +33,15 @@ Collect data by asking which months (Jan, Feb, Mar, etc) water is needed per act
 
 ## Calculation Method
 
-_no information is available_
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="1.4.water_stress"
+        code-line-numbers="true"
+    }
+```
+-->
+
 
 ## Indicator Interpretation and Threshold Setting
 

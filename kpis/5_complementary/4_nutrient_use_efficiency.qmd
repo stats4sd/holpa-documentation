@@ -56,7 +56,15 @@ Uniform data entry and all conversion of inputs and output to be reported in kg 
 
 ## Calculation Method
 
-_no information is available_
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
+
 
 ## Indicator Interpretation and Threshold Setting
 

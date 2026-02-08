@@ -59,7 +59,15 @@ The measurement unit is t C ha⁻¹ yr⁻¹.
 
 ## Calculation Method
 
-_no information is available_
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
+
 
 ## Indicator Interpretation and Threshold Setting
 

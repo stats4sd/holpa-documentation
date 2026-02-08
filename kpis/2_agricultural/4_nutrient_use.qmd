@@ -33,7 +33,12 @@ Uniform data entry and conversion of inputs to kg ha⁻¹ yr⁻¹.
 
 ## Calculation Method
 
-_no information is available_
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="2.4.nutrient_use"
+        code-line-numbers="true"
+    }
+```
 
 ## Indicator Interpretation and Threshold Setting
 

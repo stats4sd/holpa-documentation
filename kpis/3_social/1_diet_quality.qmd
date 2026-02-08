@@ -63,7 +63,12 @@ _no information is available_
 
 ## Calculation Method
 
-_no information is available_
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="3.1.diet_quality"
+        code-line-numbers="true"
+    }
+```
 
 ## Indicator Interpretation and Threshold Setting
 

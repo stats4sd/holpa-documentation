@@ -50,7 +50,23 @@ Record the crop species and variety in the system assessed. Be sure to take a GP
 
 ## Calculation Method
 
-_no information is available_
+### Qualitative (based on household survey question)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="2.1.a.crop_health_qualitative"
+        code-line-numbers="true"
+    }
+```
+
+### Quantitative (based on fieldwork survey)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="2.1.b.crop_health_quantitative"
+        code-line-numbers="true"
+    }
+```
 
 ## Indicator Interpretation and Threshold Setting
 

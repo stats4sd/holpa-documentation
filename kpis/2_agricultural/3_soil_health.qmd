@@ -68,7 +68,14 @@ Report the SOC content as a volume-based concentration (i.e. %)
 
 ## Calculation Method
 
-_no information is available_
+### Qualitiatve Measure (from household survey)
+
+```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="2.3.soil_health"
+        code-line-numbers="true"
+    }
+```
 
 ## Indicator Interpretation and Threshold Setting
 
