@@ -653,74 +653,11 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
 <section id="qualitative-based-on-household-survey-question" class="level3">
 <h3 class="anchored" data-anchor-id="qualitative-based-on-household-survey-question">Qualitative (based on household survey question)</h3>
-<div class="sourceCode" id="cb1" data-snippet="2.1.a.crop_health_qualitative" data-startfrom="26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 25;"><span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a>  <span class="do">## value is 100 - "% crop loss" as estimated by the farmer:</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a>    <span class="fu">left_join</span>(</span>
-<span id="cb1-30"><a href="#cb1-30"></a>      main_surveys <span class="sc">%&gt;%</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a>        <span class="fu">select</span>(</span>
-<span id="cb1-32"><a href="#cb1-32"></a>          farm_id,</span>
-<span id="cb1-33"><a href="#cb1-33"></a>          owner_id,</span>
-<span id="cb1-34"><a href="#cb1-34"></a>          submission_id,</span>
-<span id="cb1-35"><a href="#cb1-35"></a>          <span class="st">"kpi1a_crop_health"</span> <span class="ot">=</span> crop_loss_perc</span>
-<span id="cb1-36"><a href="#cb1-36"></a>        ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-37"><a href="#cb1-37"></a>        <span class="fu">mutate</span>(<span class="at">kpi1a_crop_health =</span> <span class="dv">100</span> <span class="sc">-</span> kpi1a_crop_health)</span>
-<span id="cb1-38"><a href="#cb1-38"></a>    ) <span class="co"># reverse to reflect percentage of crop retained (NOT lost)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-snippet="2.1.a.crop_health_qualitative"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quantitative-based-on-fieldwork-survey" class="level3">
 <h3 class="anchored" data-anchor-id="quantitative-based-on-fieldwork-survey">Quantitative (based on fieldwork survey)</h3>
-<div class="sourceCode" id="cb2" data-snippet="2.1.b.crop_health_quantitative" data-startfrom="42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 41;"><span id="cb2-42"><a href="#cb2-42"></a>  tmp <span class="ot">&lt;-</span> sites <span class="sc">%&gt;%</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a>    <span class="do">### confirm all variables are numeric and NAs if marked as '99'</span></span>
-<span id="cb2-44"><a href="#cb2-44"></a>    <span class="fu">mutate_at</span>(</span>
-<span id="cb2-45"><a href="#cb2-45"></a>      <span class="fu">vars</span>(</span>
-<span id="cb2-46"><a href="#cb2-46"></a>        appearance_description,</span>
-<span id="cb2-47"><a href="#cb2-47"></a>        growth,</span>
-<span id="cb2-48"><a href="#cb2-48"></a>        disease_incidence,</span>
-<span id="cb2-49"><a href="#cb2-49"></a>        insect_incidence,</span>
-<span id="cb2-50"><a href="#cb2-50"></a>        enemy_abundance,</span>
-<span id="cb2-51"><a href="#cb2-51"></a>        weeds,</span>
-<span id="cb2-52"><a href="#cb2-52"></a>        natural_vegetation,</span>
-<span id="cb2-53"><a href="#cb2-53"></a>        management</span>
-<span id="cb2-54"><a href="#cb2-54"></a>      ),</span>
-<span id="cb2-55"><a href="#cb2-55"></a>      <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(x)</span>
-<span id="cb2-56"><a href="#cb2-56"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-57"><a href="#cb2-57"></a>    <span class="fu">mutate_at</span>(</span>
-<span id="cb2-58"><a href="#cb2-58"></a>      <span class="fu">vars</span>(</span>
-<span id="cb2-59"><a href="#cb2-59"></a>        appearance_description,</span>
-<span id="cb2-60"><a href="#cb2-60"></a>        growth,</span>
-<span id="cb2-61"><a href="#cb2-61"></a>        disease_incidence,</span>
-<span id="cb2-62"><a href="#cb2-62"></a>        insect_incidence,</span>
-<span id="cb2-63"><a href="#cb2-63"></a>        enemy_abundance,</span>
-<span id="cb2-64"><a href="#cb2-64"></a>        weeds,</span>
-<span id="cb2-65"><a href="#cb2-65"></a>        natural_vegetation,</span>
-<span id="cb2-66"><a href="#cb2-66"></a>        management</span>
-<span id="cb2-67"><a href="#cb2-67"></a>      ),</span>
-<span id="cb2-68"><a href="#cb2-68"></a>      <span class="cf">function</span>(x) <span class="fu">na_if</span>(x, <span class="dv">99</span>)</span>
-<span id="cb2-69"><a href="#cb2-69"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-70"><a href="#cb2-70"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb2-71"><a href="#cb2-71"></a></span>
-<span id="cb2-72"><a href="#cb2-72"></a>    <span class="do">## Take the median of all the variables</span></span>
-<span id="cb2-73"><a href="#cb2-73"></a></span>
-<span id="cb2-74"><a href="#cb2-74"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-75"><a href="#cb2-75"></a>      <span class="at">kpi1b_crop_health_fieldwork =</span> <span class="fu">median</span>(</span>
-<span id="cb2-76"><a href="#cb2-76"></a>        <span class="fu">c_across</span>(appearance_description<span class="sc">:</span>management),</span>
-<span id="cb2-77"><a href="#cb2-77"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-78"><a href="#cb2-78"></a>      )</span>
-<span id="cb2-79"><a href="#cb2-79"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-80"><a href="#cb2-80"></a></span>
-<span id="cb2-81"><a href="#cb2-81"></a>    <span class="do">## take the median of all 3 fields per farm</span></span>
-<span id="cb2-82"><a href="#cb2-82"></a></span>
-<span id="cb2-83"><a href="#cb2-83"></a>    <span class="fu">group_by</span>(farm_id, owner_id, submission_id) <span class="sc">%&gt;%</span></span>
-<span id="cb2-84"><a href="#cb2-84"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb2-85"><a href="#cb2-85"></a>      <span class="at">kpi1b_crop_health_fieldwork =</span> <span class="fu">median</span>(</span>
-<span id="cb2-86"><a href="#cb2-86"></a>        kpi1b_crop_health_fieldwork,</span>
-<span id="cb2-87"><a href="#cb2-87"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-88"><a href="#cb2-88"></a>      )</span>
-<span id="cb2-89"><a href="#cb2-89"></a>    )</span>
-<span id="cb2-90"><a href="#cb2-90"></a></span>
-<span id="cb2-91"><a href="#cb2-91"></a>  <span class="do">### include the new variables in the performance_indicators data frame</span></span>
-<span id="cb2-92"><a href="#cb2-92"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
-<span id="cb2-93"><a href="#cb2-93"></a>    <span class="fu">left_join</span>(tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, kpi1b_crop_health_fieldwork))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-snippet="2.1.b.crop_health_quantitative"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">

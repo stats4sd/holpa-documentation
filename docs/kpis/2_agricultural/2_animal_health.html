@@ -663,43 +663,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
 <section id="qualitative-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="qualitative-assessment">Qualitative Assessment</h3>
-<div class="sourceCode" id="cb1" data-snippet="2.2.animal_health" data-startfrom="110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 109;"><span id="cb1-110"><a href="#cb1-110"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
-<span id="cb1-111"><a href="#cb1-111"></a></span>
-<span id="cb1-112"><a href="#cb1-112"></a>    <span class="do">### map the 4 response options to a score from 1 - 5</span></span>
-<span id="cb1-113"><a href="#cb1-113"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb1-114"><a href="#cb1-114"></a>      <span class="at">kpi2a_animal_health =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-115"><a href="#cb1-115"></a>        disease_injury <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
-<span id="cb1-116"><a href="#cb1-116"></a>        disease_injury <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
-<span id="cb1-117"><a href="#cb1-117"></a>        disease_injury <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
-<span id="cb1-118"><a href="#cb1-118"></a>        disease_injury <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb1-119"><a href="#cb1-119"></a>      )</span>
-<span id="cb1-120"><a href="#cb1-120"></a>    )</span>
-<span id="cb1-121"><a href="#cb1-121"></a></span>
-<span id="cb1-122"><a href="#cb1-122"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
-<span id="cb1-123"><a href="#cb1-123"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
-<span id="cb1-124"><a href="#cb1-124"></a>    <span class="fu">left_join</span>(</span>
-<span id="cb1-125"><a href="#cb1-125"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi2a_animal_health)</span>
-<span id="cb1-126"><a href="#cb1-126"></a>    )</span>
-<span id="cb1-127"><a href="#cb1-127"></a></span>
-<span id="cb1-128"><a href="#cb1-128"></a>  <span class="do">## fish health</span></span>
-<span id="cb1-129"><a href="#cb1-129"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
-<span id="cb1-130"><a href="#cb1-130"></a></span>
-<span id="cb1-131"><a href="#cb1-131"></a>    <span class="do">### map the 4 response options to a score from 1 - 5</span></span>
-<span id="cb1-132"><a href="#cb1-132"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb1-133"><a href="#cb1-133"></a>      <span class="at">kpi2b_fish_health =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-134"><a href="#cb1-134"></a>        fish_disease <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
-<span id="cb1-135"><a href="#cb1-135"></a>        fish_disease <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
-<span id="cb1-136"><a href="#cb1-136"></a>        fish_disease <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
-<span id="cb1-137"><a href="#cb1-137"></a>        fish_disease <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb1-138"><a href="#cb1-138"></a>      )</span>
-<span id="cb1-139"><a href="#cb1-139"></a>    )</span>
-<span id="cb1-140"><a href="#cb1-140"></a></span>
-<span id="cb1-141"><a href="#cb1-141"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
-<span id="cb1-142"><a href="#cb1-142"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
-<span id="cb1-143"><a href="#cb1-143"></a>    <span class="fu">left_join</span>(</span>
-<span id="cb1-144"><a href="#cb1-144"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi2b_fish_health)</span>
-<span id="cb1-145"><a href="#cb1-145"></a>    )</span>
-<span id="cb1-146"><a href="#cb1-146"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-snippet="2.2.animal_health"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="full-welfare-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="full-welfare-assessment">Full Welfare Assessment</h3>
