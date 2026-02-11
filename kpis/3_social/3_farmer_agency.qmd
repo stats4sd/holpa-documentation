@@ -77,5 +77,5 @@ _no information is available_
 
 ## References
 
-- Petesch and Bullock (2018)
-- Tavenner and Crane (2022)
+- [@petesch2018ladder]
+- [@tavenner2022hitting]

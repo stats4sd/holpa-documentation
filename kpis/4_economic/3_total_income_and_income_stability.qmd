@@ -126,3 +126,11 @@ Alternative income indicators to consider in future surveys include monitoring e
 - Carletto et al. (2022)
 - Parvathi and Nguyen (2018)
 - Markowitz (1952)
+- [@idh2021income]
+- [@angel2019whatdid]
+- [@carletto2021better]
+- [@carter2006economics]
+- [@falkingham2002measuring]
+- [@carletto2022measure]
+- [@parvathi2018environmental]
+- [@markowitz1952portfolio]

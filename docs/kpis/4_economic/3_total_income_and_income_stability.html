@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -283,11 +338,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -493,7 +543,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-metadata" id="toc-key-metadata" class="nav-link" data-scroll-target="#key-metadata">Key Metadata</a></li>
   <li><a href="#guidance-on-measurement" id="toc-guidance-on-measurement" class="nav-link" data-scroll-target="#guidance-on-measurement">Guidance on Measurement</a></li>
   <li><a href="#guidance-on-data-entry-and-reporting" id="toc-guidance-on-data-entry-and-reporting" class="nav-link" data-scroll-target="#guidance-on-data-entry-and-reporting">Guidance on Data Entry and Reporting</a></li>
-  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a></li>
+  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a>
+  <ul class="collapse">
+  <li><a href="#income-ratio" id="toc-income-ratio" class="nav-link" data-scroll-target="#income-ratio">Income Ratio:</a></li>
+  <li><a href="#income-stability" id="toc-income-stability" class="nav-link" data-scroll-target="#income-stability">Income Stability</a></li>
+  <li><a href="#income-vs-expenditures" id="toc-income-vs-expenditures" class="nav-link" data-scroll-target="#income-vs-expenditures">Income vs Expenditures</a></li>
+  <li><a href="#income-sufficiency" id="toc-income-sufficiency" class="nav-link" data-scroll-target="#income-sufficiency">Income Sufficiency</a></li>
+  </ul></li>
   <li><a href="#indicator-interpretation-and-threshold-setting" id="toc-indicator-interpretation-and-threshold-setting" class="nav-link" data-scroll-target="#indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -599,7 +655,97 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<section id="income-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="income-ratio">Income Ratio:</h3>
+<div class="sourceCode" id="cb1" data-snippet="4.3.a.income_ratio" data-startfrom="733"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 732;"><span id="cb1-733"><a href="#cb1-733"></a></span>
+<span id="cb1-734"><a href="#cb1-734"></a>  <span class="do">## get the reference income for the current country(ies)</span></span>
+<span id="cb1-735"><a href="#cb1-735"></a>  tmp_income_ref <span class="ot">&lt;-</span> teams <span class="sc">%&gt;%</span></span>
+<span id="cb1-736"><a href="#cb1-736"></a>    <span class="fu">select</span>(id, country_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-737"><a href="#cb1-737"></a>    <span class="fu">left_join</span>(ref_income <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>id))</span>
+<span id="cb1-738"><a href="#cb1-738"></a></span>
+<span id="cb1-739"><a href="#cb1-739"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-740"><a href="#cb1-740"></a>    <span class="fu">left_join</span>(tmp_income_ref <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, gni), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"owner_id"</span> <span class="ot">=</span> <span class="st">"id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-741"><a href="#cb1-741"></a></span>
+<span id="cb1-742"><a href="#cb1-742"></a>    <span class="do">## group by 'owner_id' (team_id) to get the overall median income from the full survey</span></span>
+<span id="cb1-743"><a href="#cb1-743"></a></span>
+<span id="cb1-744"><a href="#cb1-744"></a>    <span class="fu">group_by</span>(owner_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-745"><a href="#cb1-745"></a>    <span class="fu">mutate</span>(<span class="at">median_income =</span> <span class="fu">median</span>(income_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-746"><a href="#cb1-746"></a></span>
+<span id="cb1-747"><a href="#cb1-747"></a>    <span class="do">## calculate the 2 income ratios - one using the GNI from reference data, one from median_income calculated from this dataset</span></span>
+<span id="cb1-748"><a href="#cb1-748"></a>    <span class="fu">mutate</span>(<span class="at">kpi11a_income_ratio_ref =</span> income_sum <span class="sc">/</span> gni) <span class="sc">%&gt;%</span></span>
+<span id="cb1-749"><a href="#cb1-749"></a>    <span class="fu">mutate</span>(<span class="at">kpi11a_income_ratio_median =</span> income_sum <span class="sc">/</span> median_income)</span>
+<span id="cb1-750"><a href="#cb1-750"></a></span>
+<span id="cb1-751"><a href="#cb1-751"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-752"><a href="#cb1-752"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-753"><a href="#cb1-753"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-754"><a href="#cb1-754"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb1-755"><a href="#cb1-755"></a>        <span class="fu">select</span>(</span>
+<span id="cb1-756"><a href="#cb1-756"></a>          farm_id,</span>
+<span id="cb1-757"><a href="#cb1-757"></a>          owner_id,</span>
+<span id="cb1-758"><a href="#cb1-758"></a>          submission_id,</span>
+<span id="cb1-759"><a href="#cb1-759"></a>          kpi11a_income_ratio_ref,</span>
+<span id="cb1-760"><a href="#cb1-760"></a>          kpi11a_income_ratio_median</span>
+<span id="cb1-761"><a href="#cb1-761"></a>        )</span>
+<span id="cb1-762"><a href="#cb1-762"></a>    )</span>
+<span id="cb1-763"><a href="#cb1-763"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="income-stability" class="level3">
+<h3 class="anchored" data-anchor-id="income-stability">Income Stability</h3>
+<div class="sourceCode" id="cb2" data-snippet="4.3.b.income_stability" data-startfrom="767"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 766;"><span id="cb2-767"><a href="#cb2-767"></a></span>
+<span id="cb2-768"><a href="#cb2-768"></a>  <span class="do">## income_stability is taken directly from the ODK survey data</span></span>
+<span id="cb2-769"><a href="#cb2-769"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb2-770"><a href="#cb2-770"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb2-771"><a href="#cb2-771"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb2-772"><a href="#cb2-772"></a>        <span class="fu">mutate</span>(<span class="at">income_stability =</span> <span class="fu">as.numeric</span>(income_stability)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-773"><a href="#cb2-773"></a>        <span class="fu">select</span>(</span>
+<span id="cb2-774"><a href="#cb2-774"></a>          farm_id,</span>
+<span id="cb2-775"><a href="#cb2-775"></a>          owner_id,</span>
+<span id="cb2-776"><a href="#cb2-776"></a>          submission_id,</span>
+<span id="cb2-777"><a href="#cb2-777"></a>          <span class="st">"kpi11b_income_stability"</span> <span class="ot">=</span> income_stability</span>
+<span id="cb2-778"><a href="#cb2-778"></a>        )</span>
+<span id="cb2-779"><a href="#cb2-779"></a>    )</span>
+<span id="cb2-780"><a href="#cb2-780"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="income-vs-expenditures" class="level3">
+<h3 class="anchored" data-anchor-id="income-vs-expenditures">Income vs Expenditures</h3>
+<div class="sourceCode" id="cb3" data-snippet="4.3.c.income_v_expenditures" data-startfrom="784"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 783;"><span id="cb3-784"><a href="#cb3-784"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb3-785"><a href="#cb3-785"></a></span>
+<span id="cb3-786"><a href="#cb3-786"></a>    <span class="do">## ensure farm-loss is numeric and inverted</span></span>
+<span id="cb3-787"><a href="#cb3-787"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">as.numeric</span>(farm_loss)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-788"><a href="#cb3-788"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">na_if</span>(farm_loss, <span class="dv">999</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-789"><a href="#cb3-789"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="dv">1</span> <span class="sc">-</span> farm_loss)</span>
+<span id="cb3-790"><a href="#cb3-790"></a></span>
+<span id="cb3-791"><a href="#cb3-791"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb3-792"><a href="#cb3-792"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb3-793"><a href="#cb3-793"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb3-794"><a href="#cb3-794"></a>        <span class="fu">select</span>(</span>
+<span id="cb3-795"><a href="#cb3-795"></a>          farm_id,</span>
+<span id="cb3-796"><a href="#cb3-796"></a>          owner_id,</span>
+<span id="cb3-797"><a href="#cb3-797"></a>          submission_id,</span>
+<span id="cb3-798"><a href="#cb3-798"></a>          <span class="st">"kpi11c_income_v_expenditures"</span> <span class="ot">=</span> farm_loss</span>
+<span id="cb3-799"><a href="#cb3-799"></a>        )</span>
+<span id="cb3-800"><a href="#cb3-800"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="income-sufficiency" class="level3">
+<h3 class="anchored" data-anchor-id="income-sufficiency">Income Sufficiency</h3>
+<div class="sourceCode" id="cb4" data-snippet="4.3.c.income_v_expenditures" data-startfrom="784"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 783;"><span id="cb4-784"><a href="#cb4-784"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb4-785"><a href="#cb4-785"></a></span>
+<span id="cb4-786"><a href="#cb4-786"></a>    <span class="do">## ensure farm-loss is numeric and inverted</span></span>
+<span id="cb4-787"><a href="#cb4-787"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">as.numeric</span>(farm_loss)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-788"><a href="#cb4-788"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">na_if</span>(farm_loss, <span class="dv">999</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-789"><a href="#cb4-789"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="dv">1</span> <span class="sc">-</span> farm_loss)</span>
+<span id="cb4-790"><a href="#cb4-790"></a></span>
+<span id="cb4-791"><a href="#cb4-791"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb4-792"><a href="#cb4-792"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb4-793"><a href="#cb4-793"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb4-794"><a href="#cb4-794"></a>        <span class="fu">select</span>(</span>
+<span id="cb4-795"><a href="#cb4-795"></a>          farm_id,</span>
+<span id="cb4-796"><a href="#cb4-796"></a>          owner_id,</span>
+<span id="cb4-797"><a href="#cb4-797"></a>          submission_id,</span>
+<span id="cb4-798"><a href="#cb4-798"></a>          <span class="st">"kpi11c_income_v_expenditures"</span> <span class="ot">=</span> farm_loss</span>
+<span id="cb4-799"><a href="#cb4-799"></a>        )</span>
+<span id="cb4-800"><a href="#cb4-800"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -626,9 +772,43 @@ ul.task-list li input[type="checkbox"] {
 <li>Carletto et al.&nbsp;(2022)</li>
 <li>Parvathi and Nguyen (2018)</li>
 <li>Markowitz (1952)</li>
+<li><span class="citation" data-cites="idh2021income">(<a href="../../references.html#ref-idh2021income" role="doc-biblioref">IDH 2021</a>)</span></li>
+<li><span class="citation" data-cites="angel2019whatdid">(<a href="../../references.html#ref-angel2019whatdid" role="doc-biblioref">Angel et al. 2019</a>)</span></li>
+<li><span class="citation" data-cites="carletto2021better">(<a href="../../references.html#ref-carletto2021better" role="doc-biblioref">C. Carletto 2021</a>)</span></li>
+<li><span class="citation" data-cites="carter2006economics">(<a href="../../references.html#ref-carter2006economics" role="doc-biblioref">Carter and Barrett 2006</a>)</span></li>
+<li><span class="citation" data-cites="falkingham2002measuring">(<a href="../../references.html#ref-falkingham2002measuring" role="doc-biblioref">Falkingham and Namazie 2002</a>)</span></li>
+<li><span class="citation" data-cites="carletto2022measure">(<a href="../../references.html#ref-carletto2022measure" role="doc-biblioref">G. Carletto, Tiberti, and Zezza 2022</a>)</span></li>
+<li><span class="citation" data-cites="parvathi2018environmental">(<a href="../../references.html#ref-parvathi2018environmental" role="doc-biblioref">Parvathi and Nguyen 2018</a>)</span></li>
+<li><span class="citation" data-cites="markowitz1952portfolio">(<a href="../../references.html#ref-markowitz1952portfolio" role="doc-biblioref">Markowitz 1952</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-angel2019whatdid" class="csl-entry" role="listitem">
+Angel, S., F. Disslbacher, S. Humer, and M. Schnetzer. 2019. <span>“What Did You Really Earn Last Year?: Explaining Measurement Error in Survey Income Data.”</span> <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em> 182: 1411–37. <a href="https://doi.org/10.1111/rssa.12463">https://doi.org/10.1111/rssa.12463</a>.
+</div>
+<div id="ref-carletto2021better" class="csl-entry" role="listitem">
+Carletto, C. 2021. <span>“Better Data, Higher Impact: Improving Agricultural Data Systems for Societal Change.”</span> <em>European Review of Agricultural Economics</em> 48: 719–40. <a href="https://doi.org/10.1093/erae/jbab030">https://doi.org/10.1093/erae/jbab030</a>.
+</div>
+<div id="ref-carletto2022measure" class="csl-entry" role="listitem">
+Carletto, G., M. Tiberti, and A. Zezza. 2022. <span>“Measure for Measure: Comparing Survey Based Estimates of Income and Consumption for Rural Households.”</span> <em>World Bank Research Observer</em> 37: 1–38. <a href="https://doi.org/10.1093/wbro/lkab009">https://doi.org/10.1093/wbro/lkab009</a>.
+</div>
+<div id="ref-carter2006economics" class="csl-entry" role="listitem">
+Carter, M. R., and C. B. Barrett. 2006. <span>“The Economics of Poverty Traps and Persistent Poverty: An Asset-Based Approach.”</span> <em>Journal of Development Studies</em> 42: 178–99. <a href="https://doi.org/10.1080/00220380500405261">https://doi.org/10.1080/00220380500405261</a>.
+</div>
+<div id="ref-falkingham2002measuring" class="csl-entry" role="listitem">
+Falkingham, J., and C. Namazie. 2002. <span>“Measuring Health and Poverty: A Review of Approaches to Identifying the Poor.”</span> Department for International Development Health Systems Resource Centre.
+</div>
+<div id="ref-idh2021income" class="csl-entry" role="listitem">
+IDH. 2021. <span>“Income Measurement Survey User Guide.”</span>
+</div>
+<div id="ref-markowitz1952portfolio" class="csl-entry" role="listitem">
+Markowitz, H. 1952. <span>“Portfolio Selection.”</span> <em>The Journal of Finance</em> 7: 77–91. <a href="https://doi.org/10.2307/2975974">https://doi.org/10.2307/2975974</a>.
+</div>
+<div id="ref-parvathi2018environmental" class="csl-entry" role="listitem">
+Parvathi, P., and T. T. Nguyen. 2018. <span>“Is Environmental Income Reporting Evasive in Household Surveys? Evidence from Rural Poor in <span>Laos</span>.”</span> <em>Ecological Economics</em> 143: 218–26. <a href="https://doi.org/10.1016/j.ecolecon.2017.07.022">https://doi.org/10.1016/j.ecolecon.2017.07.022</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -87,7 +87,7 @@ _no information is available_
 
 ## References
 
-- Bahadori and Tofighi (2016)
-- Gelman et al. (n.d.)
-- Nelson and Sommers (1996)
-- Walkley and Black (1934)
+- [@bahadori2016modified]
+- [@gelman_application]
+- [@nelson1996total]
+- [@walkley1934examination]

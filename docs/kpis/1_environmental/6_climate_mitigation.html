@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -281,11 +336,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -822,7 +872,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<div class="sourceCode" id="cb1" data-snippet="1.6.climate_mitigation" data-startfrom="559"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 558;"><span id="cb1-559"><a href="#cb1-559"></a></span>
+<span id="cb1-560"><a href="#cb1-560"></a>  <span class="do">### join the practices listed in the survey data with the reference scores</span></span>
+<span id="cb1-561"><a href="#cb1-561"></a>  tmp <span class="ot">&lt;-</span> ecological_practices <span class="sc">%&gt;%</span></span>
+<span id="cb1-562"><a href="#cb1-562"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-563"><a href="#cb1-563"></a>      ref_cli_mitigation <span class="sc">%&gt;%</span></span>
+<span id="cb1-564"><a href="#cb1-564"></a>        <span class="fu">select</span>(ag_practice_id, score),</span>
+<span id="cb1-565"><a href="#cb1-565"></a>      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"practice_number"</span> <span class="ot">=</span> <span class="st">"ag_practice_id"</span>)</span>
+<span id="cb1-566"><a href="#cb1-566"></a>    ) <span class="sc">%&gt;%</span> <span class="co">#change to number when possible</span></span>
+<span id="cb1-567"><a href="#cb1-567"></a></span>
+<span id="cb1-568"><a href="#cb1-568"></a>    <span class="do">## group by farm; calculate total area of each practice, the share of total area per practice and the weighted score</span></span>
+<span id="cb1-569"><a href="#cb1-569"></a>    <span class="do">## (practice scores weighted by area of land that practice is implemented on)</span></span>
+<span id="cb1-570"><a href="#cb1-570"></a>    <span class="fu">group_by</span>(farm_id, owner_id, submission_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-571"><a href="#cb1-571"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-572"><a href="#cb1-572"></a>      <span class="at">total_area =</span> <span class="fu">sum</span>(practice_area_ha),</span>
+<span id="cb1-573"><a href="#cb1-573"></a>      <span class="at">practice_share =</span> practice_area_ha <span class="sc">/</span> total_area,</span>
+<span id="cb1-574"><a href="#cb1-574"></a>      <span class="at">weighted_cc_score =</span> score <span class="sc">*</span> practice_share</span>
+<span id="cb1-575"><a href="#cb1-575"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-576"><a href="#cb1-576"></a></span>
+<span id="cb1-577"><a href="#cb1-577"></a>    <span class="do">## overall KPI is the mean of all weighted scores</span></span>
+<span id="cb1-578"><a href="#cb1-578"></a></span>
+<span id="cb1-579"><a href="#cb1-579"></a>    <span class="fu">summarise</span>(<span class="at">kpi8_climate_mitigation =</span> <span class="fu">mean</span>(weighted_cc_score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-580"><a href="#cb1-580"></a></span>
+<span id="cb1-581"><a href="#cb1-581"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-582"><a href="#cb1-582"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-583"><a href="#cb1-583"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-584"><a href="#cb1-584"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi8_climate_mitigation)</span>
+<span id="cb1-585"><a href="#cb1-585"></a>    )</span>
+<span id="cb1-586"><a href="#cb1-586"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -835,13 +912,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Thornton et al., 2018</li>
-<li>Bell et al., 2018</li>
-<li>Anuga et al., 2020</li>
-<li>MacLeod et al., 2020</li>
+<li><span class="citation" data-cites="thornton2018qualitative">(<a href="../../references.html#ref-thornton2018qualitative" role="doc-biblioref">Thornton et al. 2018</a>)</span></li>
+<li><span class="citation" data-cites="bell2018practical">(<a href="../../references.html#ref-bell2018practical" role="doc-biblioref">Bell et al. 2018</a>)</span></li>
+<li><span class="citation" data-cites="anuga2020towards">(<a href="../../references.html#ref-anuga2020towards" role="doc-biblioref">Anuga et al. 2020</a>)</span></li>
+<li><span class="citation" data-cites="macleod2020quantifying">(<a href="../../references.html#ref-macleod2020quantifying" role="doc-biblioref">MacLeod et al. 2020</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-anuga2020towards" class="csl-entry" role="listitem">
+Anuga, S. W., N. Chirinda, D. Nukpezah, A. Ahenkan, N. Andrieu, and C. Gordon. 2020. <span>“Towards Low Carbon Agriculture: Systematic-Narratives of Climate-Smart Agriculture Mitigation Potential in <span>Africa</span>.”</span> <em>Current Research in Environmental Sustainability</em> 2: 100015. <a href="https://doi.org/10.1016/j.crsust.2020.100015">https://doi.org/10.1016/j.crsust.2020.100015</a>.
+</div>
+<div id="ref-bell2018practical" class="csl-entry" role="listitem">
+Bell, P., N. Namoi, C. Lamanna, C. Corner-Dolloff, E. H. Girvetz, C. L. Thierfelder, and T. S. Rosenstock. 2018. <span>“A Practical Guide to Climate-Smart Agriculture Technologies in <span>Africa</span>.”</span>
+</div>
+<div id="ref-macleod2020quantifying" class="csl-entry" role="listitem">
+MacLeod, M. J., M. R. Hasan, D. H. F. Robb, and M. Mamun-Ur-Rashid. 2020. <span>“Quantifying Greenhouse Gas Emissions from Global Aquaculture.”</span> <em>Scientific Reports</em> 10: 11679. <a href="https://doi.org/10.1038/s41598-020-68231-8">https://doi.org/10.1038/s41598-020-68231-8</a>.
+</div>
+<div id="ref-thornton2018qualitative" class="csl-entry" role="listitem">
+Thornton, P. K., T. Rosenstock, W. Förch, C. Lamanna, P. Bell, B. Henderson, and M. Herrero. 2018. <span>“A Qualitative Evaluation of <span>CSA</span> Options in Mixed Crop-Livestock Systems in Developing Countries.”</span> In <em>Climate Smart Agriculture: Building Resilience to Climate Change</em>, edited by L. Lipper, N. McCarthy, D. Zilberman, S. Asfaw, and G. Branca, 385–423. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-61194-5_17">https://doi.org/10.1007/978-3-319-61194-5_17</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

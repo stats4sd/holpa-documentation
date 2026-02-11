@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -281,11 +301,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -587,7 +602,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -600,11 +622,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Landmann et al., 2023</li>
-<li>Navarro et al., 2017</li>
+<li><span class="citation" data-cites="landmann2023insect">(<a href="../../references.html#ref-landmann2023insect" role="doc-biblioref">Landmann et al. 2023</a>)</span></li>
+<li><span class="citation" data-cites="navarro2017monitoring">(<a href="../../references.html#ref-navarro2017monitoring" role="doc-biblioref">Navarro et al. 2017</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-landmann2023insect" class="csl-entry" role="listitem">
+Landmann, T., M. Schmitt, B. Ekim, J. Villinger, F. Ashiono, J. C. Habel, and H. E. Z. Tonnang. 2023. <span>“Insect Diversity Is a Good Indicator of Biodiversity Status in <span>Africa</span>.”</span> <em>Communications Earth &amp; Environment</em> 4: 234. <a href="https://doi.org/10.1038/s43247-023-00896-1">https://doi.org/10.1038/s43247-023-00896-1</a>.
+</div>
+<div id="ref-navarro2017monitoring" class="csl-entry" role="listitem">
+Navarro, L. M., N. Fernández, C. Guerra, R. Guralnick, W. D. Kissling, M. C. Londoño, F. Muller-Karger, et al. 2017. <span>“Monitoring Biodiversity Change Through Effective Global Coordination.”</span> <em>Current Opinion in Environmental Sustainability</em> 29: 158–69. <a href="https://doi.org/10.1016/j.cosust.2018.02.005">https://doi.org/10.1016/j.cosust.2018.02.005</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

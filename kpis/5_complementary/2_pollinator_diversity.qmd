@@ -67,5 +67,5 @@ _no information is available_
 
 ## References
 
-- O'Connor et al. (2019)
-- Hicks et al. (2016)
+- [@oconnor2019monitoring]
+- [@hicks2016food]

@@ -50,5 +50,6 @@ _no information is available_
 
 ## References
 
-- Dobermann (2007)
-- EU Nitrogen Expert Panel (2016)
+- [@dobermann2007nutrient]
+- [@eunitrogenexpertpanel2016]
+

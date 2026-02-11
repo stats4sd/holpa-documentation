@@ -49,8 +49,6 @@ _no information is available_
 
 ## References
 
-- Hristov, A.N., Oh, J., Giallongo, F., Frederick, T., Weeks, H., Zimmerman, P.R., Harper, M.T., Hristova, R.A., Zimmerman, R.S., Branco, A.F., 2015. The Use of an Automated System (GreenFeed) to Monitor Enteric Methane and Carbon Dioxide Emissions from Ruminant Animals. JoVE 52904. <https://doi.org/10.3791/52904>
-
-- Hristov, A.N., Ott, T., Tricarico, J., Rotz, A., Waghorn, G., Adesogan, A., Dijkstra, J., Montes, F., Oh, J., Kebreab, E., Oosting, S.J., Gerber, P.J., Henderson, B., Makkar, H.P.S., Firkins, J.L., 2013. SPECIAL TOPICS — Mitigation of methane and nitrous oxide emissions from animal operations: III. A review of animal management mitigation options. Journal of Animal Science 91, 5095-5113. <https://doi.org/10.2527/jas.2013-6585>
-
-- Gbenou, G. X., Assouma, M. H., Zampaligre, N., Bois, B., Kiendrebeogo, T., Martin, C., ... & Dossa, L. H. (2022, December). Emission of enteric methane in cold dry season in sudanians peulh zebus in west africa. In 26. Rencontres autour des Recherches sur les Ruminants.
+- [@hristov2015use]
+- [@hristov2013special]
+- [@gbenou2022emission]

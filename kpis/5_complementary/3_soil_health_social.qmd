@@ -64,5 +64,5 @@ _no information is available_
 
 ## References
 
-- Nicholls et al. (2004)
-- FAO (2019)
+- [@nicholls2004a]
+- [@fao2019tape]

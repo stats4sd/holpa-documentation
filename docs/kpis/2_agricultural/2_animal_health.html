@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -283,11 +338,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -493,7 +543,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-metadata" id="toc-key-metadata" class="nav-link" data-scroll-target="#key-metadata">Key Metadata</a></li>
   <li><a href="#guidance-on-measurement" id="toc-guidance-on-measurement" class="nav-link" data-scroll-target="#guidance-on-measurement">Guidance on Measurement</a></li>
   <li><a href="#guidance-on-data-entry-and-reporting" id="toc-guidance-on-data-entry-and-reporting" class="nav-link" data-scroll-target="#guidance-on-data-entry-and-reporting">Guidance on Data Entry and Reporting</a></li>
-  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a></li>
+  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a>
+  <ul class="collapse">
+  <li><a href="#qualitative-assessment" id="toc-qualitative-assessment" class="nav-link" data-scroll-target="#qualitative-assessment">Qualitative Assessment</a></li>
+  <li><a href="#full-welfare-assessment" id="toc-full-welfare-assessment" class="nav-link" data-scroll-target="#full-welfare-assessment">Full Welfare Assessment</a></li>
+  </ul></li>
   <li><a href="#indicator-interpretation-and-threshold-setting" id="toc-indicator-interpretation-and-threshold-setting" class="nav-link" data-scroll-target="#indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -607,7 +661,50 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<section id="qualitative-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="qualitative-assessment">Qualitative Assessment</h3>
+<div class="sourceCode" id="cb1" data-snippet="2.2.animal_health" data-startfrom="110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 109;"><span id="cb1-110"><a href="#cb1-110"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-111"><a href="#cb1-111"></a></span>
+<span id="cb1-112"><a href="#cb1-112"></a>    <span class="do">### map the 4 response options to a score from 1 - 5</span></span>
+<span id="cb1-113"><a href="#cb1-113"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-114"><a href="#cb1-114"></a>      <span class="at">kpi2a_animal_health =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-115"><a href="#cb1-115"></a>        disease_injury <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb1-116"><a href="#cb1-116"></a>        disease_injury <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
+<span id="cb1-117"><a href="#cb1-117"></a>        disease_injury <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
+<span id="cb1-118"><a href="#cb1-118"></a>        disease_injury <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb1-119"><a href="#cb1-119"></a>      )</span>
+<span id="cb1-120"><a href="#cb1-120"></a>    )</span>
+<span id="cb1-121"><a href="#cb1-121"></a></span>
+<span id="cb1-122"><a href="#cb1-122"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-123"><a href="#cb1-123"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-124"><a href="#cb1-124"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-125"><a href="#cb1-125"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi2a_animal_health)</span>
+<span id="cb1-126"><a href="#cb1-126"></a>    )</span>
+<span id="cb1-127"><a href="#cb1-127"></a></span>
+<span id="cb1-128"><a href="#cb1-128"></a>  <span class="do">## fish health</span></span>
+<span id="cb1-129"><a href="#cb1-129"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-130"><a href="#cb1-130"></a></span>
+<span id="cb1-131"><a href="#cb1-131"></a>    <span class="do">### map the 4 response options to a score from 1 - 5</span></span>
+<span id="cb1-132"><a href="#cb1-132"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-133"><a href="#cb1-133"></a>      <span class="at">kpi2b_fish_health =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-134"><a href="#cb1-134"></a>        fish_disease <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb1-135"><a href="#cb1-135"></a>        fish_disease <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
+<span id="cb1-136"><a href="#cb1-136"></a>        fish_disease <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
+<span id="cb1-137"><a href="#cb1-137"></a>        fish_disease <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb1-138"><a href="#cb1-138"></a>      )</span>
+<span id="cb1-139"><a href="#cb1-139"></a>    )</span>
+<span id="cb1-140"><a href="#cb1-140"></a></span>
+<span id="cb1-141"><a href="#cb1-141"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-142"><a href="#cb1-142"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-143"><a href="#cb1-143"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-144"><a href="#cb1-144"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi2b_fish_health)</span>
+<span id="cb1-145"><a href="#cb1-145"></a>    )</span>
+<span id="cb1-146"><a href="#cb1-146"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="full-welfare-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="full-welfare-assessment">Full Welfare Assessment</h3>
+<p>For details on calculations used in the full welfare assessment, see the documentation at http://www.assurewel.org/aboutassurewel/aboutwelfareoutcomeassessment.html</p>
+</section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -620,13 +717,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>AssureWel (2018a) – assessment protocol for dairy cattle</li>
-<li>AssureWel (2018b) – scoresheet for dairy cattle</li>
-<li>AssureWel (2023) – explanation of measures for dairy cattle</li>
-<li>See http://www.assurewel.org for protocols, scoresheets and explanations for laying hens, pigs, broiler hens, beef cattle, and sheep.</li>
+<li><p><span class="citation" data-cites="assurewel2018a">(<a href="../../references.html#ref-assurewel2018a" role="doc-biblioref">AssureWel 2018a</a>)</span></p></li>
+<li><p><span class="citation" data-cites="assurewel2018b">(<a href="../../references.html#ref-assurewel2018b" role="doc-biblioref">AssureWel 2018b</a>)</span></p></li>
+<li><p><span class="citation" data-cites="assurewel2023dairy">(<a href="../../references.html#ref-assurewel2023dairy" role="doc-biblioref">AssureWel 2023</a>)</span></p></li>
+<li><p>See http://www.assurewel.org for protocols, scoresheets and explanations for laying hens, pigs, broiler hens, beef cattle, and sheep.</p></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-assurewel2018a" class="csl-entry" role="listitem">
+AssureWel. 2018a. <span>“Dairy Cattle Assessment Protocol.”</span>
+</div>
+<div id="ref-assurewel2018b" class="csl-entry" role="listitem">
+———. 2018b. <span>“Welfare Outcome Assessment Scoresheet - Dairy Cattle.”</span>
+</div>
+<div id="ref-assurewel2023dairy" class="csl-entry" role="listitem">
+———. 2023. <span>“Dairy Cattle Welfare Outcome Assessment - Explanation of Measures.”</span>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

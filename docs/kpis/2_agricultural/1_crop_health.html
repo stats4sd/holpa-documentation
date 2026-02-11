@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -316,11 +336,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -701,7 +716,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-86"><a href="#cb2-86"></a>        kpi1b_crop_health_fieldwork,</span>
 <span id="cb2-87"><a href="#cb2-87"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
 <span id="cb2-88"><a href="#cb2-88"></a>      )</span>
-<span id="cb2-89"><a href="#cb2-89"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-89"><a href="#cb2-89"></a>    )</span>
+<span id="cb2-90"><a href="#cb2-90"></a></span>
+<span id="cb2-91"><a href="#cb2-91"></a>  <span class="do">### include the new variables in the performance_indicators data frame</span></span>
+<span id="cb2-92"><a href="#cb2-92"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb2-93"><a href="#cb2-93"></a>    <span class="fu">left_join</span>(tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, kpi1b_crop_health_fieldwork))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
@@ -715,11 +734,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Nicholls et al.&nbsp;(2004a)</li>
-<li>FAO (2019)</li>
+<li><span class="citation" data-cites="nicholls2004a">(<a href="../../references.html#ref-nicholls2004a" role="doc-biblioref">Nicholls et al. 2004</a>)</span></li>
+<li><span class="citation" data-cites="fao2019tape">(<a href="../../references.html#ref-fao2019tape" role="doc-biblioref">FAO 2019</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-fao2019tape" class="csl-entry" role="listitem">
+FAO. 2019. <span>“<span>TAPE</span> Tool for Agroecology Performance Evaluation 2019 - Process of Development and Guidelines for Application. Test Version.”</span> Rome.
+</div>
+<div id="ref-nicholls2004a" class="csl-entry" role="listitem">
+Nicholls, C. I., M. A. Altieri, A. Dezanet, M. Lana, D. Feistauer, and M. Ouriques. 2004. <span>“A Rapid, Farmer-Friendly Agroecological Method to Estimate Soil Quality and Crop Health in Vineyard Systems.”</span> <em>Biodynamics</em>, 33–40.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

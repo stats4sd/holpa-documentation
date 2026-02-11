@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -281,11 +336,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -584,7 +634,73 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<div class="sourceCode" id="cb1" data-snippet="2.4.nutrient_use" data-startfrom="214"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 213;"><span id="cb1-214"><a href="#cb1-214"></a>  <span class="co"># first choice should be to use reference values here but could be difficult to effectively implement,</span></span>
+<span id="cb1-215"><a href="#cb1-215"></a>  <span class="co"># and most existing implementations do not have sufficient main_surveys</span></span>
+<span id="cb1-216"><a href="#cb1-216"></a></span>
+<span id="cb1-217"><a href="#cb1-217"></a>  <span class="do">## So, by default, we reference the 'standard' values from the ref_crops data.</span></span>
+<span id="cb1-218"><a href="#cb1-218"></a></span>
+<span id="cb1-219"><a href="#cb1-219"></a>  nut_ref <span class="ot">&lt;-</span> ref_crops <span class="sc">%&gt;%</span></span>
+<span id="cb1-220"><a href="#cb1-220"></a>    <span class="fu">group_by</span>(team_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-221"><a href="#cb1-221"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(recommended_fert_use)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-222"><a href="#cb1-222"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb1-223"><a href="#cb1-223"></a>      <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb1-224"><a href="#cb1-224"></a>      <span class="at">ref_val =</span> <span class="fu">median</span>(recommended_fert_use)</span>
+<span id="cb1-225"><a href="#cb1-225"></a>    )</span>
+<span id="cb1-226"><a href="#cb1-226"></a></span>
+<span id="cb1-227"><a href="#cb1-227"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-228"><a href="#cb1-228"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-229"><a href="#cb1-229"></a></span>
+<span id="cb1-230"><a href="#cb1-230"></a>    <span class="do">## sum all fertiliser input (chemical, own organic + bought organic)</span></span>
+<span id="cb1-231"><a href="#cb1-231"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-232"><a href="#cb1-232"></a>      <span class="at">total_fertiliser_input =</span> <span class="fu">sum</span>(</span>
+<span id="cb1-233"><a href="#cb1-233"></a>        <span class="fu">c_across</span>(<span class="fu">c</span>(</span>
+<span id="cb1-234"><a href="#cb1-234"></a>          chem_fert_kg_ha,</span>
+<span id="cb1-235"><a href="#cb1-235"></a>          own_organic_fert_kg_ha,</span>
+<span id="cb1-236"><a href="#cb1-236"></a>          bought_organic_fert_kg_ha</span>
+<span id="cb1-237"><a href="#cb1-237"></a>        )),</span>
+<span id="cb1-238"><a href="#cb1-238"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-239"><a href="#cb1-239"></a>      )</span>
+<span id="cb1-240"><a href="#cb1-240"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-241"><a href="#cb1-241"></a></span>
+<span id="cb1-242"><a href="#cb1-242"></a>    <span class="do">## take the median overall input from all surveys for comparison</span></span>
+<span id="cb1-243"><a href="#cb1-243"></a>    <span class="fu">mutate</span>(<span class="at">median_input =</span> <span class="fu">median</span>(total_fertiliser_input, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-244"><a href="#cb1-244"></a>    <span class="fu">left_join</span>(nut_ref, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"owner_id"</span> <span class="ot">=</span> <span class="st">"team_id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-245"><a href="#cb1-245"></a></span>
+<span id="cb1-246"><a href="#cb1-246"></a>    <span class="do">## value = total / ref or total / median</span></span>
+<span id="cb1-247"><a href="#cb1-247"></a>    <span class="fu">mutate</span>(<span class="at">kpi4_nutrient_use_ref =</span> total_fertiliser_input <span class="sc">/</span> ref_val) <span class="sc">%&gt;%</span></span>
+<span id="cb1-248"><a href="#cb1-248"></a>    <span class="fu">mutate</span>(<span class="at">kpi4_nutrient_use_median =</span> total_fertiliser_input <span class="sc">/</span> median_input) <span class="sc">%&gt;%</span></span>
+<span id="cb1-249"><a href="#cb1-249"></a></span>
+<span id="cb1-250"><a href="#cb1-250"></a>    <span class="do">## fix infinite or nan values to NA</span></span>
+<span id="cb1-251"><a href="#cb1-251"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-252"><a href="#cb1-252"></a>      <span class="at">kpi4_nutrient_use_ref =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb1-253"><a href="#cb1-253"></a>        <span class="fu">is.infinite</span>(kpi4_nutrient_use_ref) <span class="sc">|</span></span>
+<span id="cb1-254"><a href="#cb1-254"></a>          <span class="fu">is.nan</span>(kpi4_nutrient_use_ref),</span>
+<span id="cb1-255"><a href="#cb1-255"></a>        <span class="cn">NA</span>,</span>
+<span id="cb1-256"><a href="#cb1-256"></a>        kpi4_nutrient_use_ref</span>
+<span id="cb1-257"><a href="#cb1-257"></a>      )</span>
+<span id="cb1-258"><a href="#cb1-258"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-259"><a href="#cb1-259"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-260"><a href="#cb1-260"></a>      <span class="at">kpi4_nutrient_use_median =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb1-261"><a href="#cb1-261"></a>        <span class="fu">is.infinite</span>(kpi4_nutrient_use_median) <span class="sc">|</span></span>
+<span id="cb1-262"><a href="#cb1-262"></a>          <span class="fu">is.nan</span>(kpi4_nutrient_use_median),</span>
+<span id="cb1-263"><a href="#cb1-263"></a>        <span class="cn">NA</span>,</span>
+<span id="cb1-264"><a href="#cb1-264"></a>        kpi4_nutrient_use_median</span>
+<span id="cb1-265"><a href="#cb1-265"></a>      )</span>
+<span id="cb1-266"><a href="#cb1-266"></a>    )</span>
+<span id="cb1-267"><a href="#cb1-267"></a></span>
+<span id="cb1-268"><a href="#cb1-268"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-269"><a href="#cb1-269"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-270"><a href="#cb1-270"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-271"><a href="#cb1-271"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb1-272"><a href="#cb1-272"></a>        <span class="fu">select</span>(</span>
+<span id="cb1-273"><a href="#cb1-273"></a>          farm_id,</span>
+<span id="cb1-274"><a href="#cb1-274"></a>          owner_id,</span>
+<span id="cb1-275"><a href="#cb1-275"></a>          submission_id,</span>
+<span id="cb1-276"><a href="#cb1-276"></a>          kpi4_nutrient_use_ref,</span>
+<span id="cb1-277"><a href="#cb1-277"></a>          kpi4_nutrient_use_median</span>
+<span id="cb1-278"><a href="#cb1-278"></a>        )</span>
+<span id="cb1-279"><a href="#cb1-279"></a>    )</span>
+<span id="cb1-280"><a href="#cb1-280"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -597,11 +713,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Dobermann (2007)</li>
-<li>EU Nitrogen Expert Panel (2016)</li>
+<li><span class="citation" data-cites="dobermann2007nutrient">(<a href="../../references.html#ref-dobermann2007nutrient" role="doc-biblioref">Dobermann 2007</a>)</span></li>
+<li><span class="citation" data-cites="eunitrogenexpertpanel2016">(<a href="../../references.html#ref-eunitrogenexpertpanel2016" role="doc-biblioref">EU Nitrogen Expert Panel 2016</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-dobermann2007nutrient" class="csl-entry" role="listitem">
+Dobermann, A. 2007. <em>Nutrient Use Efficiency – Measurement and Management</em>. Paris, France: International Fertilizer Industry Association.
+</div>
+<div id="ref-eunitrogenexpertpanel2016" class="csl-entry" role="listitem">
+EU Nitrogen Expert Panel. 2016. <span>“Nitrogen Use Efficiency (<span>NUE</span>) - Guidance Document for Assessing <span>NUE</span> at Farm Level.”</span> Wageningen, Netherlands: Wageningen University.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

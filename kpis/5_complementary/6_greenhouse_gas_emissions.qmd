@@ -79,8 +79,9 @@ _no information is available_
 
 ## References
 
-- Rosenstock et al. (2016)
+- [@rosenstock2016greenhouse]
 - IPCC 2006, 2006 IPCC Guidelines for National Greenhouse Gas Inventories, Prepared by the National Greenhouse Gas Inventories Programme, Eggleston H.S., Buendia L., Miwa K., Ngara T. and Tanabe K. (eds). Published: IGES, Japan.
 - <https://unfccc.int/resource/cd_roms/na1/ghg_inventories/index.htm>
 - <https://www.ipcc-nggip.iges.or.jp/public/2019rf/vol4.html>
 - <https://www.ipcc-nggip.iges.or.jp/public/2019rf/index.html>
+

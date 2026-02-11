@@ -71,5 +71,5 @@ _no information is available_
 
 ## References
 
-- Dutilly et al. (2020)
-- Alary et al. (2022)
+- [@dutilly2020multiscale]
+- [@alary2022assessing]

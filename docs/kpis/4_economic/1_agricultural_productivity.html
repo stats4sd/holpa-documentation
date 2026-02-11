@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -281,11 +301,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -596,7 +611,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -609,11 +631,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Dutilly et al.&nbsp;(2020)</li>
-<li>Alary et al.&nbsp;(2022)</li>
+<li><span class="citation" data-cites="dutilly2020multiscale">(<a href="../../references.html#ref-dutilly2020multiscale" role="doc-biblioref">Dutilly et al. 2020</a>)</span></li>
+<li><span class="citation" data-cites="alary2022assessing">(<a href="../../references.html#ref-alary2022assessing" role="doc-biblioref">Alary et al. 2022</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-alary2022assessing" class="csl-entry" role="listitem">
+Alary, V., J. Lasseur, A. Frija, and D. Gautier. 2022. <span>“Assessing the Sustainability of Livestock Socio-Ecosystems in the Drylands Through a Set of Indicators.”</span> <em>Agricultural Systems</em> 198: 103389. <a href="https://doi.org/10.1016/j.agsy.2022.103389">https://doi.org/10.1016/j.agsy.2022.103389</a>.
+</div>
+<div id="ref-dutilly2020multiscale" class="csl-entry" role="listitem">
+Dutilly, C., V. Alary, P. Bonnet, M. Lesnoff, P. Fandamu, and C. de Haan. 2020. <span>“Multi-Scale Assessment of the Livestock Sector for Policy Design in <span>Zambia</span>.”</span> <em>Journal of Policy Modeling</em> 42: 401–18. <a href="https://doi.org/10.1016/j.jpolmod.2019.07.004">https://doi.org/10.1016/j.jpolmod.2019.07.004</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

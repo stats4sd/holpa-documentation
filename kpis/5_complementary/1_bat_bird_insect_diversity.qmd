@@ -50,4 +50,4 @@ _no information is available_
 
 ## References
 
-- Ross, S.R.J., O'Connell, D.P., Deichmann, J.L., Desjonquères, C., Gasc, A., Phillips, J.N., Sethi, S.S., Wood, C.M. and Burivalova, Z., Passive Acoustic Monitoring provides a fresh perspective on fundamental ecological questions. Functional Ecology. (Ross et al., 2023)
+- [@ross2023passive]

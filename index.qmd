@@ -1,5 +1,19 @@
+---
+status: draft
+---
+
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This web book describes the key performance indicators that comprise the Holistic Localised Performance Assessment for Agroecology (HOLPA) framework.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Use the navigation on the left (or in the top-left on mobile) to explore the information available on each indicator. You may also search the entire book with the search bar at the top of the naviagation.
+
+This book is a Quarto book, written in Markdown. The code used to build this book is available at [github.com/stats4sd/holpa-documentation](https://github.com/stats4sd/holpa-documentation). The R code snippets found in this book are references to the [holpa-r-scripts](https://github.com/stats4sd/holpa-r-scripts) Github Repository, which hosts the analysis scripts used to calculate these indicators.
+
+For more information about the HOLPA framework and tool, see [holpa.org](https://holpa.org).
+
+# External Links {.unnumbered}
+
+- Github Repository for this book: [github.com/stats4sd/holpa-documentation](https://github.com/stats4sd/holpa-documentation)
+- GitHub Repository for the HOLPA R Scripts: [holpa-r-scripts](https://github.com/stats4sd/holpa-r-scripts)
+- HOLPA Website: [holpa.org](https://holpa.org)

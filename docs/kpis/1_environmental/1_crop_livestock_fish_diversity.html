@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../kpis/1_environmental/2_insect_mammal_tree_diversity.html" rel="next">
-<link href="../../intro.html" rel="prev">
+<link href="../../index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -281,11 +301,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -584,7 +599,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<!-- TODO: which KPI(s) from the script match this one? -->
+<!-- ```{.r
+        include="../../holpa-r-scripts/data_processing/key_performance_indicators.R"
+        snippet="TK"
+        code-line-numbers="true"
+    }
+```
+-->
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -597,11 +619,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>FAO, 2019</li>
-<li>Jones et al., 2021</li>
+<li><span class="citation" data-cites="fao2019tape">(<a href="../../references.html#ref-fao2019tape" role="doc-biblioref">FAO 2019</a>)</span></li>
+<li><span class="citation" data-cites="jones2021agrobiodiversity">(<a href="../../references.html#ref-jones2021agrobiodiversity" role="doc-biblioref">Jones et al. 2021</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-fao2019tape" class="csl-entry" role="listitem">
+FAO. 2019. <span>“<span>TAPE</span> Tool for Agroecology Performance Evaluation 2019 - Process of Development and Guidelines for Application. Test Version.”</span> Rome.
+</div>
+<div id="ref-jones2021agrobiodiversity" class="csl-entry" role="listitem">
+Jones, S. K., N. Estrada-Carmona, S. D. Juventia, M. E. Dulloo, M.-A. Laporte, C. Villani, and R. Remans. 2021. <span>“Agrobiodiversity Index Scores Show Agrobiodiversity Is Underutilized in National Food Systems.”</span> <em>Nature Food</em> 2: 712–23. <a href="https://doi.org/10.1038/s43016-021-00344-3">https://doi.org/10.1038/s43016-021-00344-3</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1019,8 +1049,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Introduction</span></span>
+      <a href="../../index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

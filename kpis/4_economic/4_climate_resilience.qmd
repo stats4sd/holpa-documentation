@@ -117,7 +117,7 @@ Currently, there is a shortage of alternative resilience indicators suitable for
 
 ## References
 
-- FAO (2016) - RIMA
-- Upton et al. (2022)
-- Alloush and Carter (2024)
-- Cerqua et al. (2024) - CLARE
+- [@fao2016resilience]
+- [@upton2022caveat]
+- [@alloush2024definition]
+- [@cerqua2024causal]

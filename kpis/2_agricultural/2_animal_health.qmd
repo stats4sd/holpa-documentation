@@ -82,7 +82,8 @@ _no information is available_
 
 ## References
 
-- AssureWel (2018a) -- assessment protocol for dairy cattle
-- AssureWel (2018b) -- scoresheet for dairy cattle
-- AssureWel (2023) -- explanation of measures for dairy cattle
+- [@assurewel2018a]
+- [@assurewel2018b]
+- [@assurewel2023dairy]
+
 - See http://www.assurewel.org for protocols, scoresheets and explanations for laying hens, pigs, broiler hens, beef cattle, and sheep.

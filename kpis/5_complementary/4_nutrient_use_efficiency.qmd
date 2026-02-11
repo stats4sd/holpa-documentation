@@ -76,5 +76,5 @@ _no information is available_
 
 ## References
 
-- Dobermann (2007)
-- European Union Nitrogen Use Efficiency (NUE) (2016) (EU Nitrogen Expert Panel, 2016)
+- [@dobermann2007nutrient]
+- [@eunitrogenexpertpanel2016]

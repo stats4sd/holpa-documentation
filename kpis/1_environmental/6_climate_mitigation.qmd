@@ -107,9 +107,8 @@ _no information is available_
 
 ## References
 
-- Thornton et al., 2018
-- Bell et al., 2018
-- Anuga et al., 2020
-- MacLeod et al., 2020
-
+- [@thornton2018qualitative]
+- [@bell2018practical]
+- [@anuga2020towards]
+- [@macleod2020quantifying]
 

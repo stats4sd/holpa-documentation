@@ -83,7 +83,7 @@ _no information is available_
 
 ## References
 
-- Garibaldi et al., 2020
-- Mohamed et al., 2024
+- [@garibaldi2020working]
+- [@mohamed2024securing]
 
 

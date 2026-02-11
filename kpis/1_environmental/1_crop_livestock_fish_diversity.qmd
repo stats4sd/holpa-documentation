@@ -50,5 +50,5 @@ Be sure to use the same area units for all species/varieties/breeds, so that div
 
 ## References
 
--   FAO, 2019
--   Jones et al., 2021
+- [@fao2019tape]
+- [@jones2021agrobiodiversity]

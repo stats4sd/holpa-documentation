@@ -69,6 +69,6 @@ An alternative to the OECD subjective wellbeing is the Generalized self-efficacy
 
 ## References
 
-- WHO (2024)
-- OECD (2013)
-- International Well-being Group (2024)
+- [@who2024promoting]
+- [@oecd2013guidelines]
+- [@internationalwellbeinggroup2024]

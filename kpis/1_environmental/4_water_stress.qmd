@@ -68,7 +68,5 @@ Alternatives to consider for future surveys include the ''Agricultural Water Sca
 
 ## References
 
-- Biancalani and Marinelli, 2021
-- van Vliet et al., 2021
-
-
+- [@biancalani2021assessing]
+- [@vanvliet2021global]

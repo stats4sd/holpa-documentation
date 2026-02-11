@@ -80,7 +80,7 @@ _no information is available_
 
 ## References
 
-Global Diet Quality Project resources:
+Global Diet Quality Project resources: [https://www.dietquality.org/](https://www.dietquality.org/)
 
 - <https://www.globaldietquality.org/dqq>
 - [DQQ Food Group Descriptions](https://drive.google.com/file/d/1glD4SAdYKKCfTE2fWfr0VsZwpYC3L-3G/view?usp=sharing)

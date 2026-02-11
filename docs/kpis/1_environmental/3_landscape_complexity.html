@@ -20,7 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -283,11 +338,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -499,7 +549,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
   </ul></li>
   <li><a href="#guidance-on-data-entry-and-reporting" id="toc-guidance-on-data-entry-and-reporting" class="nav-link" data-scroll-target="#guidance-on-data-entry-and-reporting">Guidance on Data Entry and Reporting</a></li>
-  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a></li>
+  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a>
+  <ul class="collapse">
+  <li><a href="#farmer-estimates-using-holpa-survey-data" id="toc-farmer-estimates-using-holpa-survey-data" class="nav-link" data-scroll-target="#farmer-estimates-using-holpa-survey-data">Farmer estimates (using HOLPA Survey Data)</a></li>
+  </ul></li>
   <li><a href="#indicator-interpretation-and-threshold-setting" id="toc-indicator-interpretation-and-threshold-setting" class="nav-link" data-scroll-target="#indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -621,7 +674,94 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<p><em>no information is available</em></p>
+<section id="farmer-estimates-using-holpa-survey-data" class="level3">
+<h3 class="anchored" data-anchor-id="farmer-estimates-using-holpa-survey-data">Farmer estimates (using HOLPA Survey Data)</h3>
+<div class="sourceCode" id="cb1" data-snippet="1.3.landscape_complexity" data-startfrom="454"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 453;"><span id="cb1-454"><a href="#cb1-454"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-455"><a href="#cb1-455"></a></span>
+<span id="cb1-456"><a href="#cb1-456"></a>    <span class="do">### ensure required variables are numeric</span></span>
+<span id="cb1-457"><a href="#cb1-457"></a>    <span class="fu">mutate_at</span>(</span>
+<span id="cb1-458"><a href="#cb1-458"></a>      <span class="fu">vars</span>(</span>
+<span id="cb1-459"><a href="#cb1-459"></a>        natural_vegetation,</span>
+<span id="cb1-460"><a href="#cb1-460"></a>        bushland,</span>
+<span id="cb1-461"><a href="#cb1-461"></a>        fallow_land,</span>
+<span id="cb1-462"><a href="#cb1-462"></a>        hedgerows,</span>
+<span id="cb1-463"><a href="#cb1-463"></a>        grassland,</span>
+<span id="cb1-464"><a href="#cb1-464"></a>        ponds,</span>
+<span id="cb1-465"><a href="#cb1-465"></a>        forest_patches,</span>
+<span id="cb1-466"><a href="#cb1-466"></a>        wetlands,</span>
+<span id="cb1-467"><a href="#cb1-467"></a>        woodlots,</span>
+<span id="cb1-468"><a href="#cb1-468"></a>        other_land_covering</span>
+<span id="cb1-469"><a href="#cb1-469"></a>      ),</span>
+<span id="cb1-470"><a href="#cb1-470"></a>      as.numeric</span>
+<span id="cb1-471"><a href="#cb1-471"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-472"><a href="#cb1-472"></a></span>
+<span id="cb1-473"><a href="#cb1-473"></a>    <span class="do">### map diversity variables from survey optiosn to scale of 1 - 5</span></span>
+<span id="cb1-474"><a href="#cb1-474"></a>    <span class="fu">mutate_at</span>(</span>
+<span id="cb1-475"><a href="#cb1-475"></a>      <span class="fu">vars</span>(</span>
+<span id="cb1-476"><a href="#cb1-476"></a>        bushland_diversity,</span>
+<span id="cb1-477"><a href="#cb1-477"></a>        fallow_land_diversity,</span>
+<span id="cb1-478"><a href="#cb1-478"></a>        hedgerows_diversity,</span>
+<span id="cb1-479"><a href="#cb1-479"></a>        grassland_diversity,</span>
+<span id="cb1-480"><a href="#cb1-480"></a>        forest_patches_diversity,</span>
+<span id="cb1-481"><a href="#cb1-481"></a>        wetlands_diversity,</span>
+<span id="cb1-482"><a href="#cb1-482"></a>        woodlots_diversity</span>
+<span id="cb1-483"><a href="#cb1-483"></a>      ),</span>
+<span id="cb1-484"><a href="#cb1-484"></a>      <span class="cf">function</span>(x) {</span>
+<span id="cb1-485"><a href="#cb1-485"></a>        <span class="fu">case_when</span>(</span>
+<span id="cb1-486"><a href="#cb1-486"></a>          x <span class="sc">==</span> <span class="st">"high"</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb1-487"><a href="#cb1-487"></a>          x <span class="sc">==</span> <span class="st">"medium"</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
+<span id="cb1-488"><a href="#cb1-488"></a>          x <span class="sc">==</span> <span class="st">"low"</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
+<span id="cb1-489"><a href="#cb1-489"></a>          x <span class="sc">==</span> <span class="st">"none"</span> <span class="sc">~</span> <span class="dv">1</span> <span class="co">#check as HOLPA script says NA rather than 1</span></span>
+<span id="cb1-490"><a href="#cb1-490"></a>        )</span>
+<span id="cb1-491"><a href="#cb1-491"></a>      }</span>
+<span id="cb1-492"><a href="#cb1-492"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-493"><a href="#cb1-493"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-494"><a href="#cb1-494"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-495"><a href="#cb1-495"></a>      <span class="do">### take the median of each landscape type score</span></span>
+<span id="cb1-496"><a href="#cb1-496"></a>      <span class="at">lc1 =</span> <span class="fu">median</span>(</span>
+<span id="cb1-497"><a href="#cb1-497"></a>        <span class="fu">c_across</span>(<span class="fu">c</span>(</span>
+<span id="cb1-498"><a href="#cb1-498"></a>          natural_vegetation,</span>
+<span id="cb1-499"><a href="#cb1-499"></a>          bushland,</span>
+<span id="cb1-500"><a href="#cb1-500"></a>          fallow_land,</span>
+<span id="cb1-501"><a href="#cb1-501"></a>          hedgerows,</span>
+<span id="cb1-502"><a href="#cb1-502"></a>          grassland,</span>
+<span id="cb1-503"><a href="#cb1-503"></a>          ponds,</span>
+<span id="cb1-504"><a href="#cb1-504"></a>          forest_patches,</span>
+<span id="cb1-505"><a href="#cb1-505"></a>          wetlands,</span>
+<span id="cb1-506"><a href="#cb1-506"></a>          woodlots,</span>
+<span id="cb1-507"><a href="#cb1-507"></a>          other_land_covering</span>
+<span id="cb1-508"><a href="#cb1-508"></a>        )),</span>
+<span id="cb1-509"><a href="#cb1-509"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-510"><a href="#cb1-510"></a>      ),</span>
+<span id="cb1-511"><a href="#cb1-511"></a></span>
+<span id="cb1-512"><a href="#cb1-512"></a>      <span class="do">### take the median of the calculated diversity scores</span></span>
+<span id="cb1-513"><a href="#cb1-513"></a></span>
+<span id="cb1-514"><a href="#cb1-514"></a>      <span class="at">lc2 =</span> <span class="fu">median</span>(</span>
+<span id="cb1-515"><a href="#cb1-515"></a>        <span class="fu">c_across</span>(<span class="fu">c</span>(</span>
+<span id="cb1-516"><a href="#cb1-516"></a>          bushland_diversity,</span>
+<span id="cb1-517"><a href="#cb1-517"></a>          fallow_land_diversity,</span>
+<span id="cb1-518"><a href="#cb1-518"></a>          hedgerows_diversity,</span>
+<span id="cb1-519"><a href="#cb1-519"></a>          grassland_diversity,</span>
+<span id="cb1-520"><a href="#cb1-520"></a>          forest_patches_diversity,</span>
+<span id="cb1-521"><a href="#cb1-521"></a>          wetlands_diversity,</span>
+<span id="cb1-522"><a href="#cb1-522"></a>          woodlots_diversity</span>
+<span id="cb1-523"><a href="#cb1-523"></a>        )),</span>
+<span id="cb1-524"><a href="#cb1-524"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-525"><a href="#cb1-525"></a>      ),</span>
+<span id="cb1-526"><a href="#cb1-526"></a></span>
+<span id="cb1-527"><a href="#cb1-527"></a>      <span class="do">### overall landscape complexity is the median of the 2 medians</span></span>
+<span id="cb1-528"><a href="#cb1-528"></a></span>
+<span id="cb1-529"><a href="#cb1-529"></a>      <span class="at">kpi7_landscape_complexity =</span> <span class="fu">median</span>(<span class="fu">c_across</span>(lc1<span class="sc">:</span>lc2), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-530"><a href="#cb1-530"></a>    )</span>
+<span id="cb1-531"><a href="#cb1-531"></a></span>
+<span id="cb1-532"><a href="#cb1-532"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-533"><a href="#cb1-533"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-534"><a href="#cb1-534"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-535"><a href="#cb1-535"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb1-536"><a href="#cb1-536"></a>        <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi7_landscape_complexity)</span>
+<span id="cb1-537"><a href="#cb1-537"></a>    )</span>
+<span id="cb1-538"><a href="#cb1-538"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
@@ -634,11 +774,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Garibaldi et al., 2020</li>
-<li>Mohamed et al., 2024</li>
+<li><span class="citation" data-cites="garibaldi2020working">(<a href="../../references.html#ref-garibaldi2020working" role="doc-biblioref">Garibaldi et al. 2020</a>)</span></li>
+<li><span class="citation" data-cites="mohamed2024securing">(<a href="../../references.html#ref-mohamed2024securing" role="doc-biblioref">Mohamed et al. 2024</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-garibaldi2020working" class="csl-entry" role="listitem">
+Garibaldi, L. A., L. A. Schulte, F. J. Oddi, M. C. Orr, F. E. Miguez, C. Kremen, E. G. Jobbágy, et al. 2020. <span>“Working Landscapes Need at Least 20% Native Habitat,”</span> 1–10. <a href="https://doi.org/10.1111/conl.12773">https://doi.org/10.1111/conl.12773</a>.
+</div>
+<div id="ref-mohamed2024securing" class="csl-entry" role="listitem">
+Mohamed, A., F. DeClerck, P. H. Verburg, D. Obura, J. F. Abrams, N. Zafra-Calvo, J. Rocha, et al. 2024. <span>“Securing Nature’s Contributions to People Requires at Least 20%–25% (Semi-)natural Habitat in Human-Modified Landscapes.”</span> <em>One Earth</em> 7: 59–71. <a href="https://doi.org/10.1016/j.oneear.2023.12.008">https://doi.org/10.1016/j.oneear.2023.12.008</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
