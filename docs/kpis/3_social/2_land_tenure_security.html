@@ -640,43 +640,7 @@ div.csl-indent {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<div class="sourceCode" id="cb1" data-snippet="3.2.land_tenure" data-startfrom="1444"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 1443;"><span id="cb1-1444"><a href="#cb1-1444"></a></span>
-<span id="cb1-1445"><a href="#cb1-1445"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
-<span id="cb1-1446"><a href="#cb1-1446"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb1-1447"><a href="#cb1-1447"></a>      <span class="co"># vulnerable_share of land is 0 if perception of security is max.</span></span>
-<span id="cb1-1448"><a href="#cb1-1448"></a>      <span class="co"># otherwise it's the % of total_land under threat</span></span>
-<span id="cb1-1449"><a href="#cb1-1449"></a>      <span class="at">vulnerable_share =</span> <span class="fu">ifelse</span>(</span>
-<span id="cb1-1450"><a href="#cb1-1450"></a>        land_security_perception <span class="sc">==</span> <span class="dv">5</span>,</span>
-<span id="cb1-1451"><a href="#cb1-1451"></a>        <span class="dv">0</span>,</span>
-<span id="cb1-1452"><a href="#cb1-1452"></a>        area_at_threat_ha <span class="sc">/</span> total_land_ha</span>
-<span id="cb1-1453"><a href="#cb1-1453"></a>      ),</span>
-<span id="cb1-1454"><a href="#cb1-1454"></a></span>
-<span id="cb1-1455"><a href="#cb1-1455"></a>      <span class="do">## invert for the `secure_share`</span></span>
-<span id="cb1-1456"><a href="#cb1-1456"></a>      <span class="at">secure_share =</span> <span class="dv">1</span> <span class="sc">-</span> vulnerable_share,</span>
-<span id="cb1-1457"><a href="#cb1-1457"></a></span>
-<span id="cb1-1458"><a href="#cb1-1458"></a>      <span class="do">## land owned share = % of total land that is owned by the farm household</span></span>
-<span id="cb1-1459"><a href="#cb1-1459"></a>      <span class="at">land_owned_share =</span> (area_owned_ha <span class="sc">/</span> total_land_ha) <span class="sc">*</span> <span class="dv">100</span>,</span>
-<span id="cb1-1460"><a href="#cb1-1460"></a></span>
-<span id="cb1-1461"><a href="#cb1-1461"></a>      <span class="do">## calculate overall land_security_perception KPI</span></span>
-<span id="cb1-1462"><a href="#cb1-1462"></a>      <span class="at">kpi17a_land_security_perception =</span> (land_security_perception <span class="sc">*</span></span>
-<span id="cb1-1463"><a href="#cb1-1463"></a>        vulnerable_share) <span class="sc">+</span></span>
-<span id="cb1-1464"><a href="#cb1-1464"></a>        (<span class="dv">5</span> <span class="sc">*</span> secure_share),</span>
-<span id="cb1-1465"><a href="#cb1-1465"></a>      <span class="at">kpi17b_land_tenure =</span> land_owned_share</span>
-<span id="cb1-1466"><a href="#cb1-1466"></a>    )</span>
-<span id="cb1-1467"><a href="#cb1-1467"></a></span>
-<span id="cb1-1468"><a href="#cb1-1468"></a>  <span class="do">### include the new variables in the performance_indicators data frame</span></span>
-<span id="cb1-1469"><a href="#cb1-1469"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
-<span id="cb1-1470"><a href="#cb1-1470"></a>    <span class="fu">left_join</span>(</span>
-<span id="cb1-1471"><a href="#cb1-1471"></a>      tmp <span class="sc">%&gt;%</span></span>
-<span id="cb1-1472"><a href="#cb1-1472"></a>        <span class="fu">select</span>(</span>
-<span id="cb1-1473"><a href="#cb1-1473"></a>          farm_id,</span>
-<span id="cb1-1474"><a href="#cb1-1474"></a>          owner_id,</span>
-<span id="cb1-1475"><a href="#cb1-1475"></a>          submission_id,</span>
-<span id="cb1-1476"><a href="#cb1-1476"></a>          kpi17a_land_security_perception,</span>
-<span id="cb1-1477"><a href="#cb1-1477"></a>          kpi17b_land_tenure</span>
-<span id="cb1-1478"><a href="#cb1-1478"></a>        )</span>
-<span id="cb1-1479"><a href="#cb1-1479"></a>    )</span>
-<span id="cb1-1480"><a href="#cb1-1480"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-snippet="3.2.land_tenure"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
