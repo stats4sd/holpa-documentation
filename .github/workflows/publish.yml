@@ -14,6 +14,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Update git submodules
+        run: git submodule update --init
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
