@@ -664,7 +664,38 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
 <section id="qualitiatve-measure-from-household-survey" class="level3">
 <h3 class="anchored" data-anchor-id="qualitiatve-measure-from-household-survey">Qualitiatve Measure (from household survey)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="2.3.soil_health"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="2.3.soil_health" data-startfrom="163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 162;"><span id="cb1-163"><a href="#cb1-163"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-164"><a href="#cb1-164"></a></span>
+<span id="cb1-165"><a href="#cb1-165"></a>    <span class="do">### Map options per question to a score from 1 - 5</span></span>
+<span id="cb1-166"><a href="#cb1-166"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-167"><a href="#cb1-167"></a>      <span class="at">fert_score =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-168"><a href="#cb1-168"></a>        soil_fertility <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb1-169"><a href="#cb1-169"></a>        soil_fertility <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="fl">3.66</span>,</span>
+<span id="cb1-170"><a href="#cb1-170"></a>        soil_fertility <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fl">2.33</span>,</span>
+<span id="cb1-171"><a href="#cb1-171"></a>        soil_fertility <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb1-172"><a href="#cb1-172"></a>      ),</span>
+<span id="cb1-173"><a href="#cb1-173"></a>      <span class="at">erosion_score =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-174"><a href="#cb1-174"></a>        erosion <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb1-175"><a href="#cb1-175"></a>        erosion <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb1-176"><a href="#cb1-176"></a>        erosion <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">5</span></span>
+<span id="cb1-177"><a href="#cb1-177"></a>      )</span>
+<span id="cb1-178"><a href="#cb1-178"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-179"><a href="#cb1-179"></a></span>
+<span id="cb1-180"><a href="#cb1-180"></a>    <span class="do">## Take the median score of the questions</span></span>
+<span id="cb1-181"><a href="#cb1-181"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-182"><a href="#cb1-182"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-183"><a href="#cb1-183"></a>      <span class="at">kpi3_soil_health =</span> <span class="fu">median</span>(</span>
+<span id="cb1-184"><a href="#cb1-184"></a>        <span class="fu">c_across</span>(<span class="fu">c</span>(fert_score, erosion_score)),</span>
+<span id="cb1-185"><a href="#cb1-185"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-186"><a href="#cb1-186"></a>      )</span>
+<span id="cb1-187"><a href="#cb1-187"></a>    )</span>
+<span id="cb1-188"><a href="#cb1-188"></a></span>
+<span id="cb1-189"><a href="#cb1-189"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-190"><a href="#cb1-190"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-191"><a href="#cb1-191"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-192"><a href="#cb1-192"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi3_soil_health)</span>
+<span id="cb1-193"><a href="#cb1-193"></a>    )</span>
+<span id="cb1-194"><a href="#cb1-194"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">

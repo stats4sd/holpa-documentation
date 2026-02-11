@@ -649,7 +649,32 @@ div.csl-indent {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="3.4.human_well_being"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="3.4.human_well_being" data-startfrom="1491"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 1490;"><span id="cb1-1491"><a href="#cb1-1491"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-1492"><a href="#cb1-1492"></a>    <span class="do">## check values are numeric and coded as na if 'na' code is used</span></span>
+<span id="cb1-1493"><a href="#cb1-1493"></a>    <span class="fu">mutate_at</span>(</span>
+<span id="cb1-1494"><a href="#cb1-1494"></a>      <span class="fu">vars</span>(wellbeing1<span class="sc">:</span>wellbeing12),</span>
+<span id="cb1-1495"><a href="#cb1-1495"></a>      as.numeric</span>
+<span id="cb1-1496"><a href="#cb1-1496"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-1497"><a href="#cb1-1497"></a>    <span class="fu">mutate_at</span>(</span>
+<span id="cb1-1498"><a href="#cb1-1498"></a>      <span class="fu">vars</span>(wellbeing1<span class="sc">:</span>wellbeing12),</span>
+<span id="cb1-1499"><a href="#cb1-1499"></a>      <span class="cf">function</span>(x) <span class="fu">na_if</span>(x, <span class="dv">999</span>)</span>
+<span id="cb1-1500"><a href="#cb1-1500"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-1501"><a href="#cb1-1501"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-1502"><a href="#cb1-1502"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-1503"><a href="#cb1-1503"></a>      <span class="do">## overall wellbeing is median of individual scores</span></span>
+<span id="cb1-1504"><a href="#cb1-1504"></a></span>
+<span id="cb1-1505"><a href="#cb1-1505"></a>      <span class="at">kpi18_human_wellbeing =</span> <span class="fu">median</span>(</span>
+<span id="cb1-1506"><a href="#cb1-1506"></a>        <span class="fu">c_across</span>(wellbeing1<span class="sc">:</span>wellbeing12),</span>
+<span id="cb1-1507"><a href="#cb1-1507"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-1508"><a href="#cb1-1508"></a>      )</span>
+<span id="cb1-1509"><a href="#cb1-1509"></a>    )</span>
+<span id="cb1-1510"><a href="#cb1-1510"></a></span>
+<span id="cb1-1511"><a href="#cb1-1511"></a>  <span class="do">### include the new variables in the performance_indicators data frame</span></span>
+<span id="cb1-1512"><a href="#cb1-1512"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-1513"><a href="#cb1-1513"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-1514"><a href="#cb1-1514"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi18_human_wellbeing)</span>
+<span id="cb1-1515"><a href="#cb1-1515"></a>    )</span>
+<span id="cb1-1516"><a href="#cb1-1516"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>

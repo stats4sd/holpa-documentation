@@ -644,7 +644,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="3.1.diet_quality"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="3.1.diet_quality" data-startfrom="1321"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 1320;"><span id="cb1-1321"><a href="#cb1-1321"></a></span>
+<span id="cb1-1322"><a href="#cb1-1322"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-1323"><a href="#cb1-1323"></a></span>
+<span id="cb1-1324"><a href="#cb1-1324"></a>    <span class="do">## calculate main food group presence from sub-groups</span></span>
+<span id="cb1-1325"><a href="#cb1-1325"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-1326"><a href="#cb1-1326"></a>      <span class="at">grains =</span> <span class="fu">ifelse</span>(baked <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> grains <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> tubers <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-1327"><a href="#cb1-1327"></a>      <span class="at">pulses =</span> <span class="fu">as.numeric</span>(pulses),</span>
+<span id="cb1-1328"><a href="#cb1-1328"></a>      <span class="at">nuts_seeds =</span> <span class="fu">as.numeric</span>(nuts),</span>
+<span id="cb1-1329"><a href="#cb1-1329"></a>      <span class="at">dairy =</span> <span class="fu">ifelse</span>(cheese <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> yogurt <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> milk <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-1330"><a href="#cb1-1330"></a>      <span class="at">meats =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb1-1331"><a href="#cb1-1331"></a>        processed_meats <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span></span>
+<span id="cb1-1332"><a href="#cb1-1332"></a>          red_meat_ruminant <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span></span>
+<span id="cb1-1333"><a href="#cb1-1333"></a>          red_meat_non_ruminant <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span></span>
+<span id="cb1-1334"><a href="#cb1-1334"></a>          poultry <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span></span>
+<span id="cb1-1335"><a href="#cb1-1335"></a>          seafood <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-1336"><a href="#cb1-1336"></a>        <span class="dv">1</span>,</span>
+<span id="cb1-1337"><a href="#cb1-1337"></a>        <span class="dv">0</span></span>
+<span id="cb1-1338"><a href="#cb1-1338"></a>      ),</span>
+<span id="cb1-1339"><a href="#cb1-1339"></a>      <span class="at">eggs =</span> <span class="fu">as.numeric</span>(eggs),</span>
+<span id="cb1-1340"><a href="#cb1-1340"></a>      <span class="at">dark_leafy_veg =</span> <span class="fu">as.numeric</span>(darkgreen),</span>
+<span id="cb1-1341"><a href="#cb1-1341"></a>      <span class="at">vitA =</span> <span class="fu">ifelse</span>(vita_veg <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> vita_fruit <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-1342"><a href="#cb1-1342"></a>      <span class="at">veg =</span> <span class="fu">as.numeric</span>(otherveg),</span>
+<span id="cb1-1343"><a href="#cb1-1343"></a>      <span class="at">fruit =</span> <span class="fu">ifelse</span>(citrus <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> otherfruit <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb1-1344"><a href="#cb1-1344"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-1345"><a href="#cb1-1345"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-1346"><a href="#cb1-1346"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-1347"><a href="#cb1-1347"></a>      <span class="do">## indicator is sum of main food groups</span></span>
+<span id="cb1-1348"><a href="#cb1-1348"></a></span>
+<span id="cb1-1349"><a href="#cb1-1349"></a>      <span class="at">kpi15_diet_diversity =</span> <span class="fu">sum</span>(</span>
+<span id="cb1-1350"><a href="#cb1-1350"></a>        <span class="fu">c_across</span>(<span class="fu">c</span>(</span>
+<span id="cb1-1351"><a href="#cb1-1351"></a>          grains,</span>
+<span id="cb1-1352"><a href="#cb1-1352"></a>          pulses,</span>
+<span id="cb1-1353"><a href="#cb1-1353"></a>          nuts_seeds,</span>
+<span id="cb1-1354"><a href="#cb1-1354"></a>          dairy,</span>
+<span id="cb1-1355"><a href="#cb1-1355"></a>          meats,</span>
+<span id="cb1-1356"><a href="#cb1-1356"></a>          eggs,</span>
+<span id="cb1-1357"><a href="#cb1-1357"></a>          dark_leafy_veg,</span>
+<span id="cb1-1358"><a href="#cb1-1358"></a>          vitA,</span>
+<span id="cb1-1359"><a href="#cb1-1359"></a>          veg,</span>
+<span id="cb1-1360"><a href="#cb1-1360"></a>          fruit</span>
+<span id="cb1-1361"><a href="#cb1-1361"></a>        )),</span>
+<span id="cb1-1362"><a href="#cb1-1362"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-1363"><a href="#cb1-1363"></a>      )</span>
+<span id="cb1-1364"><a href="#cb1-1364"></a>    )</span>
+<span id="cb1-1365"><a href="#cb1-1365"></a></span>
+<span id="cb1-1366"><a href="#cb1-1366"></a>  <span class="do">### include the new variables in the performance_indicators data frame</span></span>
+<span id="cb1-1367"><a href="#cb1-1367"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-1368"><a href="#cb1-1368"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-1369"><a href="#cb1-1369"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi15_diet_diversity)</span>
+<span id="cb1-1370"><a href="#cb1-1370"></a>    )</span>
+<span id="cb1-1371"><a href="#cb1-1371"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>

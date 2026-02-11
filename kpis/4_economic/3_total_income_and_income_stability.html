@@ -658,19 +658,94 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
 <section id="income-ratio" class="level3">
 <h3 class="anchored" data-anchor-id="income-ratio">Income Ratio:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="4.3.a.income_ratio"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="4.3.a.income_ratio" data-startfrom="733"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 732;"><span id="cb1-733"><a href="#cb1-733"></a></span>
+<span id="cb1-734"><a href="#cb1-734"></a>  <span class="do">## get the reference income for the current country(ies)</span></span>
+<span id="cb1-735"><a href="#cb1-735"></a>  tmp_income_ref <span class="ot">&lt;-</span> teams <span class="sc">%&gt;%</span></span>
+<span id="cb1-736"><a href="#cb1-736"></a>    <span class="fu">select</span>(id, country_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-737"><a href="#cb1-737"></a>    <span class="fu">left_join</span>(ref_income <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>id))</span>
+<span id="cb1-738"><a href="#cb1-738"></a></span>
+<span id="cb1-739"><a href="#cb1-739"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb1-740"><a href="#cb1-740"></a>    <span class="fu">left_join</span>(tmp_income_ref <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, gni), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"owner_id"</span> <span class="ot">=</span> <span class="st">"id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-741"><a href="#cb1-741"></a></span>
+<span id="cb1-742"><a href="#cb1-742"></a>    <span class="do">## group by 'owner_id' (team_id) to get the overall median income from the full survey</span></span>
+<span id="cb1-743"><a href="#cb1-743"></a></span>
+<span id="cb1-744"><a href="#cb1-744"></a>    <span class="fu">group_by</span>(owner_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-745"><a href="#cb1-745"></a>    <span class="fu">mutate</span>(<span class="at">median_income =</span> <span class="fu">median</span>(income_sum, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-746"><a href="#cb1-746"></a></span>
+<span id="cb1-747"><a href="#cb1-747"></a>    <span class="do">## calculate the 2 income ratios - one using the GNI from reference data, one from median_income calculated from this dataset</span></span>
+<span id="cb1-748"><a href="#cb1-748"></a>    <span class="fu">mutate</span>(<span class="at">kpi11a_income_ratio_ref =</span> income_sum <span class="sc">/</span> gni) <span class="sc">%&gt;%</span></span>
+<span id="cb1-749"><a href="#cb1-749"></a>    <span class="fu">mutate</span>(<span class="at">kpi11a_income_ratio_median =</span> income_sum <span class="sc">/</span> median_income)</span>
+<span id="cb1-750"><a href="#cb1-750"></a></span>
+<span id="cb1-751"><a href="#cb1-751"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-752"><a href="#cb1-752"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-753"><a href="#cb1-753"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-754"><a href="#cb1-754"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb1-755"><a href="#cb1-755"></a>        <span class="fu">select</span>(</span>
+<span id="cb1-756"><a href="#cb1-756"></a>          farm_id,</span>
+<span id="cb1-757"><a href="#cb1-757"></a>          owner_id,</span>
+<span id="cb1-758"><a href="#cb1-758"></a>          submission_id,</span>
+<span id="cb1-759"><a href="#cb1-759"></a>          kpi11a_income_ratio_ref,</span>
+<span id="cb1-760"><a href="#cb1-760"></a>          kpi11a_income_ratio_median</span>
+<span id="cb1-761"><a href="#cb1-761"></a>        )</span>
+<span id="cb1-762"><a href="#cb1-762"></a>    )</span>
+<span id="cb1-763"><a href="#cb1-763"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="income-stability" class="level3">
 <h3 class="anchored" data-anchor-id="income-stability">Income Stability</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-snippet="4.3.b.income_stability"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-snippet="4.3.b.income_stability" data-startfrom="767"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 766;"><span id="cb2-767"><a href="#cb2-767"></a></span>
+<span id="cb2-768"><a href="#cb2-768"></a>  <span class="do">## income_stability is taken directly from the ODK survey data</span></span>
+<span id="cb2-769"><a href="#cb2-769"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb2-770"><a href="#cb2-770"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb2-771"><a href="#cb2-771"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb2-772"><a href="#cb2-772"></a>        <span class="fu">mutate</span>(<span class="at">income_stability =</span> <span class="fu">as.numeric</span>(income_stability)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-773"><a href="#cb2-773"></a>        <span class="fu">select</span>(</span>
+<span id="cb2-774"><a href="#cb2-774"></a>          farm_id,</span>
+<span id="cb2-775"><a href="#cb2-775"></a>          owner_id,</span>
+<span id="cb2-776"><a href="#cb2-776"></a>          submission_id,</span>
+<span id="cb2-777"><a href="#cb2-777"></a>          <span class="st">"kpi11b_income_stability"</span> <span class="ot">=</span> income_stability</span>
+<span id="cb2-778"><a href="#cb2-778"></a>        )</span>
+<span id="cb2-779"><a href="#cb2-779"></a>    )</span>
+<span id="cb2-780"><a href="#cb2-780"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="income-vs-expenditures" class="level3">
 <h3 class="anchored" data-anchor-id="income-vs-expenditures">Income vs Expenditures</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-snippet="4.3.c.income_v_expenditures"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-snippet="4.3.c.income_v_expenditures" data-startfrom="784"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 783;"><span id="cb3-784"><a href="#cb3-784"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb3-785"><a href="#cb3-785"></a></span>
+<span id="cb3-786"><a href="#cb3-786"></a>    <span class="do">## ensure farm-loss is numeric and inverted</span></span>
+<span id="cb3-787"><a href="#cb3-787"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">as.numeric</span>(farm_loss)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-788"><a href="#cb3-788"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">na_if</span>(farm_loss, <span class="dv">999</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-789"><a href="#cb3-789"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="dv">1</span> <span class="sc">-</span> farm_loss)</span>
+<span id="cb3-790"><a href="#cb3-790"></a></span>
+<span id="cb3-791"><a href="#cb3-791"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb3-792"><a href="#cb3-792"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb3-793"><a href="#cb3-793"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb3-794"><a href="#cb3-794"></a>        <span class="fu">select</span>(</span>
+<span id="cb3-795"><a href="#cb3-795"></a>          farm_id,</span>
+<span id="cb3-796"><a href="#cb3-796"></a>          owner_id,</span>
+<span id="cb3-797"><a href="#cb3-797"></a>          submission_id,</span>
+<span id="cb3-798"><a href="#cb3-798"></a>          <span class="st">"kpi11c_income_v_expenditures"</span> <span class="ot">=</span> farm_loss</span>
+<span id="cb3-799"><a href="#cb3-799"></a>        )</span>
+<span id="cb3-800"><a href="#cb3-800"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="income-sufficiency" class="level3">
 <h3 class="anchored" data-anchor-id="income-sufficiency">Income Sufficiency</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-snippet="4.3.c.income_v_expenditures"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-snippet="4.3.c.income_v_expenditures" data-startfrom="784"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 783;"><span id="cb4-784"><a href="#cb4-784"></a>  tmp <span class="ot">&lt;-</span> main_surveys <span class="sc">%&gt;%</span></span>
+<span id="cb4-785"><a href="#cb4-785"></a></span>
+<span id="cb4-786"><a href="#cb4-786"></a>    <span class="do">## ensure farm-loss is numeric and inverted</span></span>
+<span id="cb4-787"><a href="#cb4-787"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">as.numeric</span>(farm_loss)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-788"><a href="#cb4-788"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="fu">na_if</span>(farm_loss, <span class="dv">999</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-789"><a href="#cb4-789"></a>    <span class="fu">mutate</span>(<span class="at">farm_loss =</span> <span class="dv">1</span> <span class="sc">-</span> farm_loss)</span>
+<span id="cb4-790"><a href="#cb4-790"></a></span>
+<span id="cb4-791"><a href="#cb4-791"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb4-792"><a href="#cb4-792"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb4-793"><a href="#cb4-793"></a>      tmp <span class="sc">%&gt;%</span></span>
+<span id="cb4-794"><a href="#cb4-794"></a>        <span class="fu">select</span>(</span>
+<span id="cb4-795"><a href="#cb4-795"></a>          farm_id,</span>
+<span id="cb4-796"><a href="#cb4-796"></a>          owner_id,</span>
+<span id="cb4-797"><a href="#cb4-797"></a>          submission_id,</span>
+<span id="cb4-798"><a href="#cb4-798"></a>          <span class="st">"kpi11c_income_v_expenditures"</span> <span class="ot">=</span> farm_loss</span>
+<span id="cb4-799"><a href="#cb4-799"></a>        )</span>
+<span id="cb4-800"><a href="#cb4-800"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">

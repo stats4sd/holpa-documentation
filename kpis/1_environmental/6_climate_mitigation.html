@@ -873,7 +873,34 @@ div.csl-indent {
 </section>
 <section id="calculation-method" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-method">Calculation Method</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="1.6.climate_mitigation"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-snippet="1.6.climate_mitigation" data-startfrom="559"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r" style="counter-reset: source-line 558;"><span id="cb1-559"><a href="#cb1-559"></a></span>
+<span id="cb1-560"><a href="#cb1-560"></a>  <span class="do">### join the practices listed in the survey data with the reference scores</span></span>
+<span id="cb1-561"><a href="#cb1-561"></a>  tmp <span class="ot">&lt;-</span> ecological_practices <span class="sc">%&gt;%</span></span>
+<span id="cb1-562"><a href="#cb1-562"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-563"><a href="#cb1-563"></a>      ref_cli_mitigation <span class="sc">%&gt;%</span></span>
+<span id="cb1-564"><a href="#cb1-564"></a>        <span class="fu">select</span>(ag_practice_id, score),</span>
+<span id="cb1-565"><a href="#cb1-565"></a>      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"practice_number"</span> <span class="ot">=</span> <span class="st">"ag_practice_id"</span>)</span>
+<span id="cb1-566"><a href="#cb1-566"></a>    ) <span class="sc">%&gt;%</span> <span class="co">#change to number when possible</span></span>
+<span id="cb1-567"><a href="#cb1-567"></a></span>
+<span id="cb1-568"><a href="#cb1-568"></a>    <span class="do">## group by farm; calculate total area of each practice, the share of total area per practice and the weighted score</span></span>
+<span id="cb1-569"><a href="#cb1-569"></a>    <span class="do">## (practice scores weighted by area of land that practice is implemented on)</span></span>
+<span id="cb1-570"><a href="#cb1-570"></a>    <span class="fu">group_by</span>(farm_id, owner_id, submission_id) <span class="sc">%&gt;%</span></span>
+<span id="cb1-571"><a href="#cb1-571"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-572"><a href="#cb1-572"></a>      <span class="at">total_area =</span> <span class="fu">sum</span>(practice_area_ha),</span>
+<span id="cb1-573"><a href="#cb1-573"></a>      <span class="at">practice_share =</span> practice_area_ha <span class="sc">/</span> total_area,</span>
+<span id="cb1-574"><a href="#cb1-574"></a>      <span class="at">weighted_cc_score =</span> score <span class="sc">*</span> practice_share</span>
+<span id="cb1-575"><a href="#cb1-575"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-576"><a href="#cb1-576"></a></span>
+<span id="cb1-577"><a href="#cb1-577"></a>    <span class="do">## overall KPI is the mean of all weighted scores</span></span>
+<span id="cb1-578"><a href="#cb1-578"></a></span>
+<span id="cb1-579"><a href="#cb1-579"></a>    <span class="fu">summarise</span>(<span class="at">kpi8_climate_mitigation =</span> <span class="fu">mean</span>(weighted_cc_score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-580"><a href="#cb1-580"></a></span>
+<span id="cb1-581"><a href="#cb1-581"></a>  <span class="do">### include the new variable in the performance_indicators data frame</span></span>
+<span id="cb1-582"><a href="#cb1-582"></a>  performance_indicators <span class="ot">&lt;-</span> performance_indicators <span class="sc">%&gt;%</span></span>
+<span id="cb1-583"><a href="#cb1-583"></a>    <span class="fu">left_join</span>(</span>
+<span id="cb1-584"><a href="#cb1-584"></a>      tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(farm_id, owner_id, submission_id, kpi8_climate_mitigation)</span>
+<span id="cb1-585"><a href="#cb1-585"></a>    )</span>
+<span id="cb1-586"><a href="#cb1-586"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="indicator-interpretation-and-threshold-setting" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-interpretation-and-threshold-setting">Indicator Interpretation and Threshold Setting</h2>
